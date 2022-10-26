@@ -1,12 +1,13 @@
-import "./App.css";
-import MobileButtonNav from "./components/MobileButtonNav";
+import React from "react";
+import ThemeProvider from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <h1>PartyPlace</h1>
-      <MobileButtonNav />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <h1>PartyPlace</h1>
+      </div>
+    </ThemeProvider>
   );
 }
 

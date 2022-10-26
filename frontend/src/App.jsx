@@ -1,10 +1,13 @@
+import React from "react";
+import Button from "@mui/material/Button";
+import ThemeProvider from "./theme";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>PartyPlace</h1>
-    </div>
+    <ThemeProvider>
+      <Button variant="outlined">PartyPlace</Button>
+    </ThemeProvider>
   );
 }
 

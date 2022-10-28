@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import Details from "./components/Details";
 import ThemeProvider from "./theme";
-import "./App.css";
 
 function App() {
   return (
     <ThemeProvider>
-      <Button variant="outlined">PartyPlace</Button>
+      <h1>PartyPlace</h1>
+      <Details />
     </ThemeProvider>
   );
 }

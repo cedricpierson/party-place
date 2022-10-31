@@ -7,13 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Card from "@mui/material/Card";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ListItemText } from "@mui/material";
+import Preparation from "./preparation";
 
 const style = {
   position: "absolute",
@@ -75,29 +69,8 @@ export default function CocktailCard(props) {
                 src={objet.strDrinkThumb}
                 alt={objet.strDrink}
               />
-              <CardContent>
-                <Accordion sx={{ bgcolor: "#FDF0CA" }}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography variant="subtitle1">Ingredients</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <List>
-                      <ListItem>
-                        <ListItemText
-                          primary={objet.strIngredient1}
-                          secondary={objet.strMeasure1}
-                        />
-                      </ListItem>
-                    </List>
-                  </AccordionDetails>
-                </Accordion>
-                <Typography variant="body2" color="text.secondary">
-                  {objet.strInstructions}
-                </Typography>
+              <CardContent style={{ padding: "1rem" }}>
+                <Preparation objet={objet} />
               </CardContent>
             </Card>
           </Box>

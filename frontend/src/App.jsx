@@ -1,11 +1,12 @@
 import React from "react";
+import Details from "./components/Details";
 import ThemeProvider from "./theme";
-import "./App.css";
 
 function App() {
   return (
     <ThemeProvider>
-      <p>blabla</p>
+      <h1>PartyPlace</h1>
+      <Details />
     </ThemeProvider>
   );
 }

@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import MealCard from "./MealsCard";
+import MealCard from "./caroussel/MealsCard";
 
 export default function MealList({ mealApiItems }) {
   const [britishOnly, setBritishOnly] = React.useState(false);

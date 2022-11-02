@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import CocktailCard from "./CocktailCard";
+import CocktailCard from "./caroussel/CocktailCard";
 
 function CocktailList({ cocktailApiItems }) {
   return (

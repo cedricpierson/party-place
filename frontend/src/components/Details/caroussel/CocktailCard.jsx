@@ -7,7 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Card from "@mui/material/Card";
-import Preparation from "./preparation";
+import IngredientTable from "./ReceipeTable";
 
 const style = {
   position: "absolute",
@@ -70,7 +70,7 @@ export default function CocktailCard(props) {
                 alt={objet.strDrink}
               />
               <CardContent style={{ padding: "1rem" }}>
-                <Preparation objet={objet} />
+                <IngredientTable objet={objet} />
               </CardContent>
             </Card>
           </Box>

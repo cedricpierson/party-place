@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import CocktailCard from "./caroussel/CocktailCard";
 
-function CocktailList({ cocktailApiItems }) {
+function CocktailList({ cocktailApiItems, listAlcool }) {
   return (
     <div
       className="Cocktails"
@@ -24,10 +24,12 @@ function CocktailList({ cocktailApiItems }) {
         direction="row"
         spacing={1}
       >
-        {cocktailApiItems.map((item) => {
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          return <CocktailCard {...item} />;
-        })}
+        {cocktailApiItems
+          .filter((item) => item.strArea.includes(listAlcool))
+          .map((item) => {
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            return <CocktailCard {...item} />;
+          })}
       </Stack>
     </div>
   );
@@ -37,4 +39,5 @@ export default CocktailList;
 CocktailList.propTypes = {
   cocktailApiItems: PropTypes.isRequired,
   item: PropTypes.isRequired,
+  listAlcool: PropTypes.isRequired,
 };

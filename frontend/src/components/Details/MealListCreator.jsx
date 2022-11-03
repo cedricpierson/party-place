@@ -2,15 +2,9 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import MealCard from "./caroussel/MealsCard";
 
-export default function MealList({ mealApiItems }) {
-  const [britishOnly, setBritishOnly] = React.useState(false);
-  const handleBritishClick = () => {
-    setBritishOnly(!britishOnly);
-  };
-
+export default function MealList({ mealApiItems, country }) {
   return (
     <div
       className="Recettes"
@@ -21,14 +15,6 @@ export default function MealList({ mealApiItems }) {
       }}
     >
       <Typography variant="h4">Recette à déguster</Typography>
-      <Button
-        variant="contained"
-        color="inherit"
-        size="small"
-        onClick={handleBritishClick}
-      >
-        Great Britain !
-      </Button>
       <Stack
         style={{
           height: "65vh",
@@ -40,7 +26,7 @@ export default function MealList({ mealApiItems }) {
         spacing={1}
       >
         {mealApiItems
-          .filter((item) => !britishOnly || item.strArea.includes("British"))
+          .filter((item) => item.strArea.includes(country))
           .map((item) => {
             // eslint-disable-next-line react/jsx-props-no-spreading
             return <MealCard {...item} />;
@@ -53,4 +39,5 @@ export default function MealList({ mealApiItems }) {
 MealList.propTypes = {
   mealApiItems: PropTypes.isRequired,
   item: PropTypes.isRequired,
+  country: PropTypes.isRequired,
 };

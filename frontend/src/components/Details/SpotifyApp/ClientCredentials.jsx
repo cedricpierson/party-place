@@ -1,19 +1,24 @@
-/*const axios = require("axios");
+const axios = require("axios");
 require("dotenv").config();
 
-const client_id = process.env.SPOTIFY_API_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const auth_token = Buffer.from(
-  `${client_id}:${client_secret}`,
-  "utf-8"
-).toString("base64");
+const clientId = process.env.SPOTIFY_API_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+const authToken = Buffer.from(`${clientId}:${clientSecret}`, "utf-8").toString(
+  "base64"
+);
 
-const auth = () => {};
+const auth = () => {
+  axios
+    .post("https://accounts.spotify.com/api/token", {
+      grant_type: "client_credentials",
+    })
+    .then((res) => res.json);
+};
 
 const getAuth = async () => {
   try {
     const token_url = "https://accounts.spotify.com/api/token";
-    const data = qs.stringify({ grant_type: "client_credentials" });
+    const data = { grant_type: "client_credentials" };
 
     const response = await axios.post(token_url, data, {
       headers: {

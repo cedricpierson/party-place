@@ -28,7 +28,7 @@ function MobileButtonNav() {
             showLabels
             value=""
             onChange=""
-            sx={{ bgcolor: "primary.dark" }}
+            sx={{ bgcolor: "primary.main" }}
           >
             <BottomNavigationAction
               label="Recettes"

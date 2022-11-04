@@ -1,12 +1,12 @@
 import React from "react";
+import "./App.css";
 import ThemeProvider from "./theme";
-import meals from "./components/Details/ApiSim";
-import MealList from "./components/Details/MealListCreator";
+import Details from "./components/Details";
 
 function App() {
   return (
     <ThemeProvider>
-      <MealList mealApiItems={meals} country="British" />
+      <Details />
     </ThemeProvider>
   );
 }

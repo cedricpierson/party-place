@@ -34,13 +34,13 @@ export default function MealCard(props) {
       sx={{
         width: "35vw",
         height: "60vh",
+        bgcolor: "#D9C468",
       }}
       style={{
         minWidth: "35vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#D9C468",
       }}
     >
       <CardMedia

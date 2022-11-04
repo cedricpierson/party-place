@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
 import MealCard from "./caroussel/MealsCard";
 
 export default function MealList({ mealApiItems, country }) {
@@ -11,10 +12,13 @@ export default function MealList({ mealApiItems, country }) {
       style={{
         height: "75vh",
         paddingLeft: "1rem",
-        backgroundColor: "#FDF0CA",
+        backgroundColor: "inherit",
       }}
     >
-      <Typography variant="h4">Recette à déguster</Typography>
+      <Typography variant="h4">
+        <LocalDiningIcon style={{ backgrounColor: "inherit" }} />
+        Recette à déguster
+      </Typography>
       <Stack
         style={{
           height: "65vh",

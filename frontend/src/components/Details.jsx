@@ -1,11 +1,11 @@
 import React from "react";
-import SpotifyPlayer from "./Details/SpotifyPlayer";
 import MobileButtonNav from "./Details/MobileButtonNav";
+import SpotifyApp from "./Details/SpotifyApp";
 
 function Details() {
   return (
     <div>
-      <SpotifyPlayer />
+      <SpotifyApp />
       <MobileButtonNav />
     </div>
   );

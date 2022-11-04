@@ -1,7 +1,7 @@
 // import React from "react";
 
 function Home() {
-  return console.warn("Spotify");
+  return <div />;
 }
 
 export default Home;

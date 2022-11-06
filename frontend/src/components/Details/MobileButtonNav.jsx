@@ -11,7 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 function MobileButtonNav() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box sx={{ pb: 7 }}>
       <Paper

@@ -33,8 +33,8 @@ export default function MealCard(props) {
       className="MealCard"
       sx={{
         width: "35vw",
-        height: "60vh",
-        bgcolor: "#D9C468",
+        height: "40vh",
+        bgcolor: "primary.main",
       }}
       style={{
         minWidth: "35vw",
@@ -50,17 +50,24 @@ export default function MealCard(props) {
         alt={objet.strMeal}
       />
       <CardContent>
-        <Button onClick={handleOpen} style={{ color: "inherit" }}>
+        <Button
+          onClick={handleOpen}
+          style={{
+            color: "inherit",
+            padding: "2rem 2rem 0rem 2rem",
+          }}
+          sx={{ fontSize: "1.3rem" }}
+        >
           {objet.strMeal}
         </Button>
-        <Typography align="center" variant="subtitle1">
+        <Typography align="center" variant="h4">
           {objet.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Card
               style={{ overflowY: "scroll" }}
-              sx={{ width: "100%", height: "100%", bgcolor: "#FDF0CA" }}
+              sx={{ width: "100%", height: "100%", bgcolor: "secondary.main" }}
             >
               <CardHeader align="center" title={objet.strMeal} />
               <CardMedia

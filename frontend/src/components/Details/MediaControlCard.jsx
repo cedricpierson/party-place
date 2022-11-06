@@ -29,18 +29,19 @@ const playlists = {
   vietnamese: "37i9dQZF1EIgcobXTmqxI9  ",
 };
 
-const country = playlists.spanish;
+const country = playlists.british;
 
 export default function MediaControlCard() {
   return (
     <Iframe
       src={`https://open.spotify.com/embed/playlist/${country}?utm_source=generator&theme=0`}
       width="100%"
-      height="280"
+      height="100%"
       frameBorder="0"
       allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
+      style={{ height: "40vh" }}
     />
   );
 }

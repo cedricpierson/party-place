@@ -33,14 +33,14 @@ export default function CocktailCard(props) {
       className="CocktailCard"
       sx={{
         width: "35vw",
-        height: "60vh",
+        height: "40vh",
+        bgcolor: "primary.main",
       }}
       style={{
         minWidth: "35vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#D9C468",
       }}
     >
       <CardMedia
@@ -50,10 +50,17 @@ export default function CocktailCard(props) {
         alt={objet.strDrink}
       />
       <CardContent>
-        <Button onClick={handleOpen} style={{ color: "inherit" }}>
+        <Button
+          onClick={handleOpen}
+          style={{
+            color: "inherit",
+            padding: "2rem 2rem 0rem 2rem",
+          }}
+          sx={{ fontSize: "1.3rem" }}
+        >
           {objet.strDrink}
         </Button>
-        <Typography align="center" variant="subtitle1">
+        <Typography align="center" variant="h4">
           {objet.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>

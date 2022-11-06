@@ -10,7 +10,7 @@ export default function MealList({ mealApiItems, country }) {
     <div
       className="Recettes"
       style={{
-        height: "75vh",
+        height: "55vh",
         paddingLeft: "1rem",
         backgroundColor: "inherit",
       }}
@@ -21,7 +21,7 @@ export default function MealList({ mealApiItems, country }) {
       </Typography>
       <Stack
         style={{
-          height: "65vh",
+          height: "45vh",
           maxHeight: "65vh",
           overflowX: "scroll",
           alignItems: "center",

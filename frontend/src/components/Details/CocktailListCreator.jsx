@@ -11,7 +11,7 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
       id="Scroll"
       className="Cocktails"
       style={{
-        height: "75vh",
+        height: "55vh",
         paddingLeft: "1rem",
         backgroundColor: "inherit",
       }}
@@ -22,7 +22,7 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
       </Typography>
       <Stack
         style={{
-          height: "65vh",
+          height: "45vh",
           overflowX: "scroll",
           alignItems: "center",
         }}

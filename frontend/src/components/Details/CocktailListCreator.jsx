@@ -8,7 +8,7 @@ import CocktailCard from "./caroussel/CocktailCard";
 function CocktailList({ cocktailApiItems, listAlcool }) {
   return (
     <div
-      id="Scroll"
+      id="cocktail"
       className="Cocktails"
       style={{
         height: "55vh",
@@ -16,8 +16,11 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
         backgroundColor: "inherit",
       }}
     >
-      <Typography variant="h4">
-        <LocalBarIcon style={{ backgrounColor: "inherit" }} />
+      <Typography
+        variant="h3"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <LocalBarIcon fontSize="Large" />
         Cocktail à savourer
       </Typography>
       <Stack

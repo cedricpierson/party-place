@@ -22,13 +22,23 @@ function Details({ Country, gentillet, alcool1 }) {
       >
         <img src={logo} alt="Party Place Logo" height="100%" />
       </div>
-      <Typography variant="h2" align="center" color="primary.main">
+      <Typography
+        variant="h2"
+        align="center"
+        color="primary.main"
+        sx={{ letterSpacing: 5 }}
+        style={{ textShadow: "3px 3px #c2a000" }}
+      >
         {Country}
       </Typography>
-      <MealList mealApiItems={meals} country={gentillet} />
-      <CocktailList cocktailApiItems={drinks} listAlcool={alcool1} />
+      <MealList id="meal" mealApiItems={meals} country={gentillet} />
+      <CocktailList
+        id="cocktail"
+        cocktailApiItems={drinks}
+        listAlcool={alcool1}
+      />
       <SpotifyApp />
-      <MobileButtonNav />
+      <MobileButtonNav element1={MealList} />
     </div>
   );
 }

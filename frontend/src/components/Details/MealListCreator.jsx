@@ -8,6 +8,7 @@ import MealCard from "./caroussel/MealsCard";
 export default function MealList({ mealApiItems, country }) {
   return (
     <div
+      id="mealList"
       className="Recettes"
       style={{
         height: "55vh",
@@ -15,8 +16,11 @@ export default function MealList({ mealApiItems, country }) {
         backgroundColor: "inherit",
       }}
     >
-      <Typography variant="h4">
-        <LocalDiningIcon style={{ backgrounColor: "inherit" }} />
+      <Typography
+        variant="h3"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <LocalDiningIcon fontSize="Large" />
         Recette à déguster
       </Typography>
       <Stack

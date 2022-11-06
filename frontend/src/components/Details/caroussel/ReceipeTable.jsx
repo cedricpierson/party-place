@@ -85,13 +85,13 @@ export default function IngredientTable({ objet }) {
   ];
   return (
     <div>
-      <Accordion sx={{ bgcolor: "#FDF0CA" }}>
+      <Accordion sx={{ bgcolor: "inherit" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography variant="subtitle1">Ingredients</Typography>
+          <Typography variant="h5">Ingredients</Typography>
         </AccordionSummary>
         <AccordionDetails style={{ padding: 0 }}>
           <TableContainer>
@@ -116,7 +116,7 @@ export default function IngredientTable({ objet }) {
           </TableContainer>
         </AccordionDetails>
       </Accordion>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" color="primary.darker">
         {recette.strInstructions}
       </Typography>
     </div>

@@ -15,7 +15,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   height: "80vh",
-  width: "65vw",
+  width: "95vw",
   bgcolor: "#D9C468",
   border: "2px solid #A08F35",
   boxShadow: 24,
@@ -69,10 +69,14 @@ export default function CocktailCard(props) {
               sx={{ width: "100%", height: "100%", bgcolor: "#FDF0CA" }}
               style={{ overflowY: "scroll" }}
             >
-              <CardHeader title={objet.strDrink} align="center" />
+              <CardHeader
+                title={objet.strDrink}
+                align="center"
+                sx={{ typography: "h2" }}
+              />
               <CardMedia
                 component="img"
-                height="80"
+                height="50%"
                 src={objet.strDrinkThumb}
                 alt={objet.strDrink}
               />

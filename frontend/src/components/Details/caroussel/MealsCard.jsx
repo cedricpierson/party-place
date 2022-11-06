@@ -15,7 +15,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   height: "80vh",
-  width: "65vw",
+  width: "95vw",
   bgcolor: "#D9C468",
   border: "2px solid #A08F35",
   boxShadow: 24,
@@ -72,7 +72,7 @@ export default function MealCard(props) {
               <CardHeader align="center" title={objet.strMeal} />
               <CardMedia
                 component="img"
-                height="80"
+                height="50%"
                 src={objet.strMealThumb}
                 alt={objet.strMeal}
               />

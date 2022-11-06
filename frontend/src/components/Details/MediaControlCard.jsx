@@ -41,7 +41,7 @@ export default function MediaControlCard() {
       allowfullscreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
-      style={{ height: "40vh" }}
+      style={{ height: "60vh", fontFamily: "Poppin, sans serif" }}
     />
   );
 }

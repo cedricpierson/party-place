@@ -1,8 +1,8 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { PropTypes } from "prop-types";
-import drinks from "./ApiSim2";
-import meals from "./ApiSim";
+import drinks from "./Divers/ApiSim2";
+import meals from "./Divers/ApiSim";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";

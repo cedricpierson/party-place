@@ -1,19 +1,23 @@
 import React from "react";
 import { Box } from "@mui/material";
+import ClientCredentials from "./SpotifyApp/ClientCredentials";
+// import Login from "./SpotifyApp/Login";
 import MediaControlCard from "./SpotifyApp/MediaControlCard";
 
 function SpotifyApp() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-end",
-        minHeight: "100vh",
-      }}
-    >
-      <MediaControlCard />
-    </Box>
+    <div>
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        <ClientCredentials />
+      </Box>
+      <Box>
+        <MediaControlCard />
+      </Box>
+    </div>
   );
 }
 

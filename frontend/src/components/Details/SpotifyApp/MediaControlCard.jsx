@@ -1,7 +1,7 @@
 import * as React from "react";
 import Iframe from "react-iframe";
 
-const playlists = {
+const defaultPlaylists = {
   american: "37i9dQZF1DX1I8r5TKL11Z",
   british: "56KwtEj1ujnxLC3goPJLe0",
   canadian: "6sIFSy7K2BmZXSrsudzSqj",
@@ -29,7 +29,7 @@ const playlists = {
   vietnamese: "37i9dQZF1EIgcobXTmqxI9  ",
 };
 
-const country = playlists.spanish;
+const country = defaultPlaylists.turkish;
 
 export default function MediaControlCard() {
   return (

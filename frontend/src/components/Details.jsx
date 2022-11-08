@@ -1,12 +1,15 @@
 import React from "react";
+import { Box } from "@mui/material";
 import MobileButtonNav from "./Details/MobileButtonNav";
 import SpotifyApp from "./Details/SpotifyApp";
 
 function Details() {
   return (
     <div>
-      <SpotifyApp />
-      <MobileButtonNav />
+      <Box>
+        <SpotifyApp />
+        <MobileButtonNav />
+      </Box>
     </div>
   );
 }

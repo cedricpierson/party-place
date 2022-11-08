@@ -1,5 +1,5 @@
 import React from "react";
-import SpotifyPlayer from "./Details/SpotifyPlayer";
+import SpotifyPlayer from "./Details/SpotifyApp";
 
 function Landing() {
   return <SpotifyPlayer />;

@@ -2,22 +2,30 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import LocalBarIcon from "@mui/icons-material/LocalBar";
 import CocktailCard from "./caroussel/CocktailCard";
 
 function CocktailList({ cocktailApiItems, listAlcool }) {
   return (
     <div
+      id="cocktail"
       className="Cocktails"
       style={{
-        height: "75vh",
+        height: "55vh",
         paddingLeft: "1rem",
-        backgroundColor: "#FDF0CA",
+        backgroundColor: "inherit",
       }}
     >
-      <Typography variant="h4">Cocktail à savourer</Typography>
+      <Typography
+        variant="h3"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <LocalBarIcon fontSize="Large" />
+        Cocktail à savourer
+      </Typography>
       <Stack
         style={{
-          height: "65vh",
+          height: "45vh",
           overflowX: "scroll",
           alignItems: "center",
         }}
@@ -25,7 +33,7 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
         spacing={1}
       >
         {cocktailApiItems
-          .filter((item) => item.strArea.includes(listAlcool))
+          .filter((item) => item.strIngredient1.includes(listAlcool))
           .map((item) => {
             // eslint-disable-next-line react/jsx-props-no-spreading
             return <CocktailCard {...item} />;

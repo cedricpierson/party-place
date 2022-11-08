@@ -11,7 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 function MobileButtonNav() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box sx={{ pb: 7 }}>
       <Paper
@@ -28,22 +28,29 @@ function MobileButtonNav() {
             showLabels
             value=""
             onChange=""
-            sx={{ bgcolor: "primary.main" }}
+            sx={{
+              bgcolor: "primary.main",
+              border: 2,
+              borderColor: "primary.darker",
+            }}
           >
             <BottomNavigationAction
               label="Recettes"
               icon={<LocalDiningIcon />}
               sx={{ color: "primary.lighter" }}
+              href="#mealList"
             />
             <BottomNavigationAction
               label="Cocktails"
               icon={<LocalBarIcon sx={{ color: "primary.lighter" }} />}
               sx={{ color: "primary.lighter" }}
+              href="#cocktail"
             />
             <BottomNavigationAction
               label="Playlist"
               icon={<LibraryMusicIcon sx={{ color: "primary.lighter" }} />}
               sx={{ color: "primary.lighter" }}
+              href="#playlist"
             />
           </BottomNavigation>
         )}

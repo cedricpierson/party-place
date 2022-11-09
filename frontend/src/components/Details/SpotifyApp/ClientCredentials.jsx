@@ -1,7 +1,9 @@
 /* eslint-disable prefer-destructuring */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Card, Stack } from "@mui/material";
+import { Box, Button, Card, Stack, TextField, Typography } from "@mui/material";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
+import SearchIcon from "@mui/icons-material/Search";
 
 function ClientCredentials() {
   const CLIENT_ID = "18d0d84374f94718a9e898e89b678bd2";
@@ -58,50 +60,67 @@ function ClientCredentials() {
 
   const renderPlaylists = () => {
     return (
-      <div>
-        <Stack
-          style={{
-            height: "65vh",
-            maxHeight: "65vh",
-            overflowX: "scroll",
-            alignItems: "center",
-          }}
-          direction="row"
-          spacing={1}
-        >
-          {playlists.map((playlist) => (
-            <Card
-              key={playlist.id}
-              sx={{
-                textAlign: "center",
-                width: "50vw",
-                transform: "scale(0.9)",
-                bgcolor: "primary.main",
-                color: "primary.lighter",
-              }}
-            >
-              {playlist.images.length ? (
-                <img width="100%" src={playlist.images[0].url} alt="" />
-              ) : (
-                <div>No Image</div>
-              )}
-              <h5>{playlist.name}</h5>
-            </Card>
-          ))}
-        </Stack>
-      </div>
+      <Stack
+        style={{
+          overflowX: "scroll",
+          alignItems: "center",
+        }}
+        direction="row"
+      >
+        {playlists.map((playlist) => (
+          <Card
+            key={playlist.id}
+            sx={{
+              textAlign: "center",
+              width: "50vw",
+              transform: "scale(0.9)",
+              bgcolor: "primary.main",
+              color: "primary.lighter",
+            }}
+          >
+            {playlist.images.length ? (
+              <img width="100%" src={playlist.images[0].url} alt="" />
+            ) : (
+              <div>No Image</div>
+            )}
+            <Typography variant="h5" sx={{ color: "secondary.main" }}>
+              {playlist.name}
+            </Typography>
+          </Card>
+        ))}
+      </Stack>
     );
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Playlists</h1>
+    <div>
+      <Box style={{ margin: "1rem", width: "100vw" }}>
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "1rem",
+            marginTop: "2rem",
+          }}
+          id="playlist"
+        >
+          <LibraryMusicIcon fontSize="Large" />
+          Playlists
+        </Typography>
 
         {token ? (
           <form onSubmit={searchPlaylists}>
-            <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-            <Button type="submit">Rechercher</Button>
+            <TextField
+              id="standard-basic"
+              label="Rechercher"
+              onChange={(e) => setSearchKey(e.target.value)}
+              sx={{ width: "70vw" }}
+            />
+            <Button type="submit">
+              <SearchIcon />
+            </Button>
           </form>
         ) : (
           <h4>Se connecter à Spotify</h4>
@@ -116,9 +135,8 @@ function ClientCredentials() {
         ) : (
           <Button onClick={logout}>Déconnexion</Button>
         )}
-
-        {renderPlaylists()}
-      </header>
+      </Box>
+      {renderPlaylists()}
     </div>
   );
 }

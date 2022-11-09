@@ -11,6 +11,7 @@ function SpotifyApp() {
         sx={{
           display: "flex",
         }}
+        style={{ overflowX: "auto" }}
       >
         <ClientCredentials />
       </Box>

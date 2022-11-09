@@ -11,21 +11,26 @@ export default function MealList({ mealApiItems, country }) {
       id="mealList"
       className="Recettes"
       style={{
-        height: "55vh",
-        paddingLeft: "1rem",
         backgroundColor: "inherit",
+        marginTop: "2rem",
+        paddingLeft: "1rem",
       }}
     >
       <Typography
         variant="h3"
-        style={{ display: "flex", alignItems: "center" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+        sx={{ color: "secondary.main" }}
       >
         <LocalDiningIcon fontSize="Large" />
         Recette à déguster
       </Typography>
       <Stack
         style={{
-          height: "45vh",
+          height: "55vw",
+          marginTop: "1rem",
           maxHeight: "65vh",
           overflowX: "scroll",
           alignItems: "center",

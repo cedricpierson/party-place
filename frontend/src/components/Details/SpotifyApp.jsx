@@ -1,23 +1,13 @@
 import React from "react";
-import { Box } from "@mui/material";
-import ClientCredentials from "./SpotifyApp/ClientCredentials";
+import SearchPlaylists from "./SpotifyApp/SearchPlaylists";
 // import Login from "./SpotifyApp/Login";
-import MediaControlCard from "./SpotifyApp/MediaControlCard";
+import EmbedPlayer from "./SpotifyApp/EmbedPlayer";
 
 function SpotifyApp() {
   return (
     <div>
-      <Box
-        sx={{
-          display: "flex",
-        }}
-        style={{ overflowX: "auto" }}
-      >
-        <ClientCredentials />
-      </Box>
-      <Box>
-        <MediaControlCard />
-      </Box>
+      <SearchPlaylists />
+      <EmbedPlayer />
     </div>
   );
 }

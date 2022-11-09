@@ -1,7 +1,7 @@
 import React from "react";
 import Iframe from "react-iframe";
 
-export default function MediaControlCard() {
+export default function EmbedPlayer() {
   const defaultPlaylists = {
     american: "37i9dQZF1DX1I8r5TKL11Z",
     british: "56KwtEj1ujnxLC3goPJLe0",

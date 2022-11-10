@@ -1,6 +1,7 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import { Card, Typography } from "@mui/material/";
 import { PropTypes } from "prop-types";
+import PlaceIcon from "@mui/icons-material/Place";
 import drinks from "./Divers/ApiSim2";
 import meals from "./Divers/ApiSim";
 import MealList from "./MealListCreator";
@@ -11,7 +12,7 @@ import SpotifyApp from "./SpotifyApp";
 
 function Details({ Country, gentillet, alcool1 }) {
   return (
-    <div className="Details Page" style={{ backgroundColor: "#FDF0CA" }}>
+    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
       <div
         style={{
           display: "flex",
@@ -20,24 +21,44 @@ function Details({ Country, gentillet, alcool1 }) {
           backgroundColor: "#D9C468",
         }}
       >
-        <img src={logo} alt="Party Place Logo" height="100%" />
+        <a href="#Home">
+          <img src={logo} alt="Party Place Logo" height="100%" />
+        </a>
       </div>
-      <Typography
-        variant="h2"
-        align="center"
-        color="primary.main"
-        sx={{ letterSpacing: 5 }}
-        style={{ textShadow: "3px 3px #c2a000" }}
+      <Card
+        style={{
+          margin: "1rem 1rem 1rem 0",
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
+        sx={{
+          display: "flex",
+          bgcolor: "primary.main",
+          borderRadius: "0 20px 20px 0",
+        }}
       >
-        {Country}
-      </Typography>
-      <MealList id="meal" mealApiItems={meals} country={gentillet} />
+        <Typography
+          variant="h2"
+          style={{ display: "flex", alignItems: "center" }}
+          sx={{ color: "primary.lighter", marginLeft: "1rem" }}
+        >
+          <PlaceIcon fontSize="Large" />
+          {Country}
+        </Typography>
+      </Card>
+      <MealList
+        sx={{ margin: "1rem" }}
+        id="meal"
+        mealApiItems={meals}
+        country={gentillet}
+      />
       <CocktailList
+        sx={{ margin: "1rem" }}
         id="cocktail"
         cocktailApiItems={drinks}
         listAlcool={alcool1}
       />
-      <SpotifyApp />
+      <SpotifyApp sx={{ margin: "1rem" }} />
       <MobileButtonNav element1={MealList} />
     </div>
   );

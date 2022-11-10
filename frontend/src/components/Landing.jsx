@@ -1,8 +1,7 @@
 import React from "react";
-import SpotifyPlayer from "./Details/SpotifyApp";
 
 function Landing() {
-  return <SpotifyPlayer />;
+  return <div />;
 }
 
 export default Landing;

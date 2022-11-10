@@ -32,12 +32,13 @@ export default function MealCard(props) {
     <Card
       className="MealCard"
       sx={{
-        width: "35vw",
-        height: "40vh",
+        width: "50vw",
+        height: "50vw",
+        display: "flex",
         bgcolor: "primary.main",
       }}
       style={{
-        minWidth: "35vw",
+        minWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -56,11 +57,20 @@ export default function MealCard(props) {
             color: "inherit",
             padding: "2rem 2rem 0rem 2rem",
           }}
-          sx={{ fontSize: "1.3rem" }}
         >
-          {objet.strMeal}
+          <Typography
+            align="center"
+            variant="h5"
+            sx={{ color: "primary.lighter" }}
+          >
+            {objet.strMeal}
+          </Typography>
         </Button>
-        <Typography align="center" variant="h4">
+        <Typography
+          align="center"
+          variant="h5"
+          sx={{ color: "primary.lighter" }}
+        >
           {objet.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>

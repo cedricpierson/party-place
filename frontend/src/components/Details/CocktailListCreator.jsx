@@ -11,21 +11,23 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
       id="cocktail"
       className="Cocktails"
       style={{
-        height: "55vh",
-        paddingLeft: "1rem",
         backgroundColor: "inherit",
+        marginTop: "2rem",
+        paddingLeft: "1rem",
       }}
     >
       <Typography
         variant="h3"
         style={{ display: "flex", alignItems: "center" }}
+        sx={{ color: "secondary.main" }}
       >
         <LocalBarIcon fontSize="Large" />
         Cocktail à savourer
       </Typography>
       <Stack
         style={{
-          height: "45vh",
+          height: "55vw",
+          marginTop: "1rem",
           overflowX: "scroll",
           alignItems: "center",
         }}

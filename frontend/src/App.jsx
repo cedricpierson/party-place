@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
 import ThemeProvider from "./theme";
-import Details from "./components/Details/Details";
+import Welcomepage from "./components/Welcomepage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <ThemeProvider>
-      <Details Country="Great Britain" gentillet="British" alcool1="Gin" />
+      <Header />
+      <Welcomepage />
     </ThemeProvider>
   );
 }

@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Typography } from "@mui/material/";
 import { PropTypes } from "prop-types";
 import PlaceIcon from "@mui/icons-material/Place";
+import allList from "./Divers/getMealsApi";
 import drinks from "./Divers/ApiSim2";
-import meals from "./Divers/ApiSim";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";
 import logo from "./partyplace.png";
 import SpotifyApp from "./SpotifyApp";
 
+function getAllList() {
+  const [list, setList] = useState();
+  useEffect(() => {
+    allList().then((data) => {
+      setList(data);
+    });
+  }, []);
+  return list;
+}
+
 function Details({ Country, gentillet, alcool1 }) {
+  const mealsApi = getAllList();
   return (
     <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
       <div
@@ -49,7 +60,7 @@ function Details({ Country, gentillet, alcool1 }) {
       <MealList
         sx={{ margin: "1rem" }}
         id="meal"
-        mealApiItems={meals}
+        mealApiItems={mealsApi}
         country={gentillet}
       />
       <CocktailList

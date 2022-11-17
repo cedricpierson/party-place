@@ -38,12 +38,16 @@ export default function MealList({ mealApiItems, country }) {
         direction="row"
         spacing={1}
       >
-        {mealApiItems
-          .filter((item) => item.strArea.includes(country))
-          .map((item) => {
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <MealCard {...item} />;
-          })}
+        {mealApiItems ? (
+          mealApiItems
+            .filter((item) => item.strArea.includes(country))
+            .map((item) => {
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              return <MealCard {...item} />;
+            })
+        ) : (
+          <Typography variant="h3">Meals in load </Typography>
+        )}
       </Stack>
     </div>
   );

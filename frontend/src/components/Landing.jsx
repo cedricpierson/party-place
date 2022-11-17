@@ -1,8 +1,14 @@
 import React from "react";
-import SpotifyPlayer from "./Details/SpotifyApp";
+import Welcomepage from "./Welcomepage";
+import Header from "./Header";
 
 function Landing() {
-  return <SpotifyPlayer />;
+  return (
+    <>
+      <Header />
+      <Welcomepage />
+    </>
+  );
 }
 
 export default Landing;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Typography } from "@mui/material/";
 import { Link } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
-import allList from "./Divers/getMealsApi";
+import allListbyLetter from "./Divers/getMealsApi";
 import drinks from "./Divers/ApiSim2";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
@@ -14,7 +14,7 @@ import data from "../../data/data.json";
 function getAllList() {
   const [list, setList] = useState();
   useEffect(() => {
-    allList().then((response) => {
+    allListbyLetter().then((response) => {
       setList(response);
     });
   }, []);

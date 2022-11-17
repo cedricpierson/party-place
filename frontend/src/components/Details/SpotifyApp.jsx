@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { PropTypes } from "prop-types";
 import SearchPlaylists from "./SpotifyApp/SearchPlaylists";
-// import Login from "./SpotifyApp/Login";
 import EmbedPlayer from "./SpotifyApp/EmbedPlayer";
 
-function SpotifyApp() {
+export default function SpotifyApp({ country }) {
+  const [playlistId, setPlaylistId] = useState("");
   return (
     <div>
-      <SearchPlaylists />
-      <EmbedPlayer />
+      <SearchPlaylists playlistId={playlistId} setPlaylistId={setPlaylistId} />
+      <EmbedPlayer
+        playlistId={playlistId}
+        setPlaylistId={setPlaylistId}
+        country={country}
+      />
     </div>
   );
 }
 
-export default SpotifyApp;
+SpotifyApp.propTypes = {
+  country: PropTypes.string.isRequired,
+};

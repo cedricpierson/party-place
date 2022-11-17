@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Stack, Typography } from "@mui/material";
 
-function Playlists({ playlists }) {
+function Playlists({ playlists, setPlaylistId }) {
   return (
     <Stack
       style={{
@@ -10,32 +10,36 @@ function Playlists({ playlists }) {
       }}
       direction="row"
     >
-      {playlists.map((playlist) => (
-        <Card
-          key={playlist.id}
-          sx={{
-            display: "flex",
-            textAlign: "center",
-            minWidth: "50vw",
-            height: "50vw",
-            transform: "scale(0.9)",
-            bgcolor: "primary.main",
-            color: "primary.lighter",
-            flexDirection: "column",
-          }}
-        >
-          {playlist.images.length ? (
-            <img width="100%" src={playlist.images[0].url} alt="" />
-          ) : (
-            <div>No Image</div>
-          )}
-          <CardContent>
-            <Typography variant="h5" sx={{ color: "secondary.main" }}>
-              {playlist.name}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
+      {playlists &&
+        playlists.map((playlist) => (
+          <Card
+            key={playlist.id}
+            sx={{
+              display: "flex",
+              textAlign: "center",
+              minWidth: "50vw",
+              height: "50vw",
+              transform: "scale(0.9)",
+              bgcolor: "primary.main",
+              color: "primary.lighter",
+              flexDirection: "column",
+            }}
+            onClick={() => {
+              setPlaylistId(playlist.id);
+            }}
+          >
+            {playlist.images.length ? (
+              <img width="100%" src={playlist.images[0].url} alt="" />
+            ) : (
+              <div>No Image</div>
+            )}
+            <CardContent>
+              <Typography variant="h5" sx={{ color: "secondary.main" }}>
+                {playlist.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
     </Stack>
   );
 }
@@ -52,6 +56,7 @@ Playlists.propTypes = {
       ),
     })
   ).isRequired,
+  setPlaylistId: PropTypes.func.isRequired,
 };
 
 export default Playlists;

@@ -1,0 +1,47 @@
+{
+    "countries": [
+        {
+    "code": "CA",
+    "label": "Canada",
+    "suggested": true
+  },
+  { "code": "CN", "label": "Chine", "suggested": true },
+  { "code": "HR", "label": "Croatie", "suggested": true },
+  { "code": "EG", "label": "Egypte", "suggested": true },
+  { "code": "ES", "label": "Espagne", "suggested": true },
+  {
+    "code": "US",
+    "label": "États-Unis",
+
+    "suggested": true
+  },
+
+  {
+    "code": "FR",
+    "label": "France",
+    "suggested": true
+  },
+  { "code": "GB", "label": "Grande-Bretagne", "suggested": true },
+  { "code": "GR", "label": "Grèce", "suggested": true },
+  { "code": "IN", "label": "Inde", "suggested": true },
+  { "code": "IE", "label": "Irlande", "suggested": true },
+  { "code": "IT", "label": "Italie", "suggested": true },
+  { "code": "JM", "label": "Jamaïque", "suggested": true },
+  {
+    "code": "JP",
+    "label": "Japon",
+    "suggested": true
+  },
+  { "code": "MY", "label": "Malaysie", "suggested": true },
+  { "code": "MA", "label": "Maroc", "suggested": true },
+  { "code": "MX", "label": "Mexique", "suggested": true },
+  { "code": "NL", "label": "Pays-Bas", "suggested": true },
+  { "code": "PL", "label": "Pologne", "suggested": true },
+  { "code": "PT", "label": "Portugal", "suggested": true },
+  { "code": "RU", "label": "Russie", "suggested": true },
+  { "code": "TH", "label": "Thaïlande", "suggested": true },
+  { "code": "TN", "label": "Tunisie", "suggested": true },
+  { "code": "TR", "label": "Turquie", "suggested": true },
+  { "code": "VN", "label": "Vietnam", "suggested": true }
+]
+}

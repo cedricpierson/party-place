@@ -1,0 +1,102 @@
+{
+    "États-Unis":{
+        "gentillet":"American",
+        "alcool1":"Southern Comfort",
+        "defaultPlaylistId":"37i9dQZF1DX1I8r5TKL11Z"},
+    "Grande-Bretagne":{
+        "gentillet":"British",
+        "alcool1":"Sloe gin",
+        "defaultPlaylistId":"56KwtEj1ujnxLC3goPJLe0"},
+    "Canada":{
+        "gentillet":"Canadian",
+        "alcool1":"Apple cider",
+        "defaultPlaylistId":"6sIFSy7K2BmZXSrsudzSqj"},
+    "Chine":{
+        "gentillet":"Chinese",
+        "alcool1":"Applejack",
+        "defaultPlaylistId":"1HuLhcQu2aZ6VQePfObpuJ"},
+    "Croatie":{
+        "gentillet":"Croatian",
+        "alcool1":"Mango",
+        "defaultPlaylistId":"05Kbl0qgf6bJqrRj36v1hz"},
+    "Pays-Bas":{
+        "gentillet":"Dutch",
+        "alcool1":"Gin",
+        "defaultPlaylistId":"7xrMpVSFn4GlmxvqseuTOr"},
+    "Egypte":{
+        "gentillet":"Egyptian",
+        "alcool1":"Absolut Citron",
+        "defaultPlaylistId":"4WrLR29U37XOw2nFIwAnt0"},
+    "France":{
+        "gentillet":"French",
+        "alcool1":"Cognac",
+        "defaultPlaylistId":"5jMlZp1dvEUdrh8j4UawlY"},
+    "Grèce":{
+        "gentillet":"Greek",
+        "alcool1":"Ouzo",
+        "defaultPlaylistId":"5YYLMdpRVmlXbYwjtfVJ4F"},
+    "Inde":{
+        "gentillet":"Indian",
+        "alcool1":"Southern Comfort",
+        "defaultPlaylistId":"2VHdhD77ZP0A3GuJ1MVEfQ"},
+    "Irlande":{
+        "gentillet":"Irish",
+        "alcool1":"Irish whiskey",
+        "defaultPlaylistId":"37i9dQZF1DWUrmUI5ur5GK"},
+    "Italie":{
+        "gentillet":"Italian",
+        "alcool1":"Vermouth",
+        "defaultPlaylistId":"3ckPlDq2MADJsKFEScxatl"},
+    "Jamaïque":{
+        "gentillet":"Jamaican",
+        "alcool1":"Coffee liqueur",
+        "defaultPlaylistId":"2xMPIISWaiVQ0xtyR4oNtb"},
+    "Japon":{
+        "gentillet":"Japanese",
+        "alcool1":"Midori melon liqueur",
+        "defaultPlaylistId":"0ig2IiVTh2rnTcTgHZPHPi"},
+    "Malaysie":{
+        "gentillet":"Malaysian",
+        "alcool1":"Firewater",
+        "defaultPlaylistId":"3MH85EO45A05xfkWJHZOMv"},
+    "Mexique":{
+        "gentillet":"Mexican",
+        "alcool1":"Tequila",
+        "defaultPlaylistId":"5CprLYitYtfBOme6c36TRV"},
+    "Maroc":{
+        "gentillet":"Moroccan",
+        "alcool1":"Pineapple juice",
+        "defaultPlaylistId":"2Uc759FNkLhwW4SurLnHja"},
+    "Pologne":{
+        "gentillet":"Polish",
+        "alcool1":"Peach Vodka",
+        "defaultPlaylistId":"37i9dQZEVXbN6itCcaL3Tt"},
+    "Portugal":{
+        "gentillet":"Portuguese",
+        "alcool1":"Yoghurt",
+        "defaultPlaylistId":"0RmCzBa2zeGKG2blSipxVY"},
+    "Russie":{
+        "gentillet":"Russian",
+        "alcool1":"Vodka",
+        "defaultPlaylistId":"5nUeb09mcB8gpIiiYZ8zt7"},
+    "Espagne":{
+        "gentillet":"Spanish",
+        "alcool1":"Xérès",
+        "defaultPlaylistId":"0u0oMCZEnWzbJnLNsycjGQ"},
+    "Thaïlande":{
+        "gentillet":"Thai",
+        "alcool1":"Watermelon",
+        "defaultPlaylistId":"5ITXdARLNLeuN5JmT2eCwb"},
+    "Tunisie":{
+        "gentillet":"Tunisian",
+        "alcool1":"Lime juice",
+        "defaultPlaylistId":"5rFuRjfrnBY2KGgEtxVOFT"},
+    "Turquie":{
+        "gentillet":"Turkish",
+        "alcool1":"Cranberry juice",
+        "defaultPlaylistId":"1LxSfuEaAvjNBOy2dbVCU7"},
+    "Vietnam":{
+        "gentillet":"Vietnamese",
+        "alcool1":"Sweet Vermouth",
+        "defaultPlaylistId":"37i9dQZF1EIgcobXTmqxI9"}
+  }

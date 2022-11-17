@@ -6,7 +6,7 @@ import Details from "./components/Details/Details";
 function App() {
   return (
     <ThemeProvider>
-      <Details Country="Great Britain" gentillet="French" alcool1="Gin" />
+      <Details Country="Great Britain" gentillet="Canadian" alcool1="Gin" />
     </ThemeProvider>
   );
 }

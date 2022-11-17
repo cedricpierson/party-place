@@ -1,6 +1,7 @@
 import React from "react";
+import logo from "./Logoheaderlight.png";
 
-function Home() {
+function homedetailsheader() {
   return (
     <div style={{ display: "flex" }}>
       <div
@@ -10,7 +11,10 @@ function Home() {
           backgroundColor: "#FFF5EC",
           width: "80%",
         }}
-      />
+      >
+        <img src={logo} alt="logo" />
+      </div>
+
       <div
         style={{
           backgroundColor: "#D9C46B",
@@ -22,4 +26,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default homedetailsheader;

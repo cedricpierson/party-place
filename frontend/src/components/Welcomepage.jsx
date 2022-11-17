@@ -18,7 +18,7 @@ function Welcomepage() {
         alignItems: "center",
         fontSize: "20px",
         backgroundImage: `url(${bgImg})`,
-        minHeight: "600px",
+        minHeight: "80%",
         backgroundSize: "cover",
       }}
     >
@@ -33,36 +33,35 @@ function Welcomepage() {
         <h5>Un apéro dinatoire aux couleurs de l'Italie?</h5>
         <h5>Votre anniversaire au rythme de la salsa?</h5>
         <h5>Laissez-vous guider</h5>
+        <form style={{}}>
+          <input
+            style={{
+              height: "34px",
+              borderRadius: "17px 0px 0px 17px",
+              paddingLeft: "15px",
+            }}
+            type="text"
+            placeholder="Votre Nom"
+            value={userInput}
+            onChange={(event) => setUserInput(event.target.value)}
+          />
+
+          <Button
+            sx={{ color: "primary.lighter", bgcolor: "primary.main" }}
+            style={{
+              height: "32px",
+              width: "50px",
+              borderRadius: "0px 17px 17px 0px",
+              fontSize: "15px",
+              marginTop: "4px",
+            }}
+            onClick={handleSubmit}
+          >
+            {" "}
+            GO{" "}
+          </Button>
+        </form>
       </div>
-
-      <form>
-        <input
-          style={{
-            height: "34px",
-            borderRadius: "17px 0px 0px 17px",
-            paddingLeft: "15px",
-            marginBottom: "40px",
-          }}
-          type="text"
-          placeholder="Votre Nom"
-          value={userInput}
-          onChange={(event) => setUserInput(event.target.value)}
-        />
-
-        <Button
-          sx={{ color: "primary.lighter", bgcolor: "primary.main" }}
-          style={{
-            height: "34px",
-            width: "50px",
-            borderRadius: "0px 17px 17px 0px",
-            fontSize: "15px",
-          }}
-          onClick={handleSubmit}
-        >
-          {" "}
-          GO{" "}
-        </Button>
-      </form>
     </div>
   );
 }

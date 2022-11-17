@@ -8,7 +8,30 @@ async function getList(letter) {
   return list;
 }
 export default async function allListbyLetter() {
-  const tabLetter = ["a", "b", "c", "d", "e", "f"];
+  const tabLetter = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "y",
+  ];
   let AllList = [];
   for await (const letter of tabLetter) {
     const listProv = await getList(letter);

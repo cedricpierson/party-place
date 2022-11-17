@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Typography } from "@mui/material/";
-import { PropTypes } from "prop-types";
 import PlaceIcon from "@mui/icons-material/Place";
 import drinks from "./Divers/ApiSim2";
 import meals from "./Divers/ApiSim";
@@ -9,8 +9,12 @@ import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";
 import logo from "./partyplace.png";
 import SpotifyApp from "./SpotifyApp";
+import data from "../../data/data.json";
 
-function Details({ Country, gentillet, alcool1 }) {
+export default function Details() {
+  const country = JSON.parse(localStorage.getItem("country"));
+  const alcool1 = data[country.alcool1];
+  const userName = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
       <div
@@ -21,10 +25,38 @@ function Details({ Country, gentillet, alcool1 }) {
           backgroundColor: "#D9C468",
         }}
       >
-        <a href="#Home">
+        <Link to="/">
           <img src={logo} alt="Party Place Logo" height="100%" />
-        </a>
+        </Link>
       </div>
+      <Typography
+        variant="h5"
+        position="absolute"
+        top="1rem"
+        left="1rem"
+        sx={{ color: "grey.0" }}
+        style={{
+          textAlign: "right",
+          marginRight: "1rem",
+        }}
+        id="username"
+      >
+        {userName}
+      </Typography>
+      <Typography
+        variant="h2"
+        sx={{ color: "secondary.main" }}
+        style={{
+          display: "flex",
+          textAlign: "center",
+          alignItems: "center",
+          marginTop: "0.2rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Au Programme
+      </Typography>
       <Card
         style={{
           margin: "1rem 1rem 1rem 0",
@@ -43,14 +75,14 @@ function Details({ Country, gentillet, alcool1 }) {
           sx={{ color: "primary.lighter", marginLeft: "1rem" }}
         >
           <PlaceIcon fontSize="Large" />
-          {Country}
+          {country}
         </Typography>
       </Card>
       <MealList
         sx={{ margin: "1rem" }}
         id="meal"
         mealApiItems={meals}
-        country={gentillet}
+        country={country}
       />
       <CocktailList
         sx={{ margin: "1rem" }}
@@ -58,15 +90,8 @@ function Details({ Country, gentillet, alcool1 }) {
         cocktailApiItems={drinks}
         listAlcool={alcool1}
       />
-      <SpotifyApp sx={{ margin: "1rem" }} />
+      <SpotifyApp sx={{ margin: "1rem" }} country={country} />
       <MobileButtonNav element1={MealList} />
     </div>
   );
 }
-
-export default Details;
-Details.propTypes = {
-  Country: PropTypes.isRequired,
-  gentillet: PropTypes.isRequired,
-  alcool1: PropTypes.isRequired,
-};

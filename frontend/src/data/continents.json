@@ -1,0 +1,43 @@
+{
+    "continents": {
+"Asie": [
+"Chinese",
+"Indian",
+"Japanese",
+"Malaysian",
+"Russian",
+"Turkish",
+"Vietnamese",
+"Thai"
+],
+
+"Europe": [
+"British",
+"Croatian",
+"Dutch"	,
+"French",
+"Greek",
+"Irish",
+"Italian",
+"Polish",
+"Portuguese",
+"Spanish"
+],
+
+"Amérique du Nord": [
+"American",
+"Canadian"
+],
+
+"Amérique Latine": [
+"Jamaican",
+"Mexican"
+],
+"Afrique": [
+"Egyptian",
+"Kenyan",
+"Moroccan",	
+"Tunisian"
+]
+    }
+}

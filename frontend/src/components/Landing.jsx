@@ -43,7 +43,7 @@ export default function Landing() {
         }}
         id="playlist"
       >
-        Où Allons-Nous Ce Soir ?
+        Laissez-Vous Guider
       </Typography>
       <form
         onSubmit={handleSubmit}

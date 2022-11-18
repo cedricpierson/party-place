@@ -30,18 +30,14 @@ export default function Details() {
         </Link>
       </div>
       <Typography
-        variant="h5"
-        position="absolute"
-        top="1rem"
-        left="1rem"
-        sx={{ color: "grey.0" }}
+        variant="h4"
+        sx={{ color: "secondary.main" }}
         style={{
-          textAlign: "right",
-          marginRight: "1rem",
+          margin: "1rem",
         }}
         id="username"
       >
-        {userName}
+        Salut {userName.toUpperCase()} !
       </Typography>
       <Typography
         variant="h2"

@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import logo from "./Details/partyplace.png";
 import formCountries from "../data/formCountries.json";
+import Selection from "./Home/Selection";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -34,18 +35,14 @@ export default function Home() {
         </Link>
       </div>
       <Typography
-        variant="h5"
-        position="absolute"
-        top="1rem"
-        left="1rem"
-        sx={{ color: "grey.0" }}
+        variant="h4"
+        sx={{ color: "secondary.main" }}
         style={{
-          textAlign: "right",
-          marginRight: "1rem",
+          margin: "1rem",
         }}
         id="username"
       >
-        {userName}
+        Salut {userName.toUpperCase()} !
       </Typography>
       <Typography
         variant="h3"
@@ -117,6 +114,7 @@ export default function Home() {
             >
               C'est Party!
             </Button>
+            <Selection />
           </form>
         )}
       />

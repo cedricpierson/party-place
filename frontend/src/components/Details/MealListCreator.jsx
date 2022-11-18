@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import Skeleton from "@mui/material/Skeleton";
 import MealCard from "./caroussel/MealsCard";
 
 export default function MealList({ mealApiItems, country }) {
@@ -38,12 +39,22 @@ export default function MealList({ mealApiItems, country }) {
         direction="row"
         spacing={1}
       >
-        {mealApiItems
-          .filter((item) => item.strArea.includes(country))
-          .map((item) => {
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <MealCard {...item} />;
-          })}
+        {mealApiItems ? (
+          mealApiItems
+            .filter((item) => item.strArea.includes(country))
+            .map((item) => {
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              return <MealCard {...item} />;
+            })
+        ) : (
+          <Skeleton
+            sx={{ bgcolor: "primary.light" }}
+            animation="pulse"
+            variant="rounded"
+            width="100vw"
+            height="55vw"
+          />
+        )}
       </Stack>
     </div>
   );

@@ -50,17 +50,16 @@ export default function MealCard(props) {
         src={objet.strMealThumb}
         alt={objet.strMeal}
       />
-      <CardContent>
+      <CardContent style={{ padding: 0 }}>
         <Button
           onClick={handleOpen}
           style={{
             color: "inherit",
-            padding: "2rem 2rem 0rem 2rem",
           }}
         >
           <Typography
             align="center"
-            variant="h5"
+            variant="body1"
             sx={{ color: "primary.lighter" }}
           >
             {objet.strMeal}
@@ -68,8 +67,8 @@ export default function MealCard(props) {
         </Button>
         <Typography
           align="center"
-          variant="h5"
-          sx={{ color: "primary.lighter" }}
+          variant="body2"
+          sx={{ color: "primary.darker" }}
         >
           {objet.strCategory}
         </Typography>
@@ -77,7 +76,7 @@ export default function MealCard(props) {
           <Box sx={style}>
             <Card
               style={{ overflowY: "scroll" }}
-              sx={{ width: "100%", height: "100%", bgcolor: "secondary.main" }}
+              sx={{ width: "100%", height: "100%", bgcolor: "primary.lighter" }}
             >
               <CardHeader align="center" title={objet.strMeal} />
               <CardMedia

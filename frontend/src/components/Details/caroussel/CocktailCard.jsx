@@ -77,7 +77,7 @@ export default function CocktailCard(props) {
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Card
-              sx={{ width: "100%", height: "100%", bgcolor: "#FDF0CA" }}
+              sx={{ width: "100%", height: "100%", bgcolor: "primary.lighter" }}
               style={{ overflowY: "scroll" }}
             >
               <CardHeader

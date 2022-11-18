@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { Card, Typography } from "@mui/material/";
+import { Link } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
+import allListbyLetter from "./Divers/getMealsApi";
 import drinks from "./Divers/ApiSim2";
-import meals from "./Divers/ApiSim";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";
@@ -11,10 +11,21 @@ import logo from "./partyplace.png";
 import SpotifyApp from "./SpotifyApp";
 import data from "../../data/data.json";
 
+function getAllList() {
+  const [list, setList] = useState();
+  useEffect(() => {
+    allListbyLetter().then((response) => {
+      setList(response);
+    });
+  }, []);
+  return list;
+}
+
 export default function Details() {
   const country = JSON.parse(localStorage.getItem("country"));
-  const alcool1 = data[country.alcool1];
+  const mealsApi = getAllList();
   const userName = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
       <div
@@ -77,14 +88,14 @@ export default function Details() {
       <MealList
         sx={{ margin: "1rem" }}
         id="meal"
-        mealApiItems={meals}
-        country={country}
+        mealApiItems={mealsApi}
+        country={data[country].gentillet}
       />
       <CocktailList
         sx={{ margin: "1rem" }}
         id="cocktail"
         cocktailApiItems={drinks}
-        listAlcool={alcool1}
+        listAlcool={data[country].alcool1}
       />
       <SpotifyApp sx={{ margin: "1rem" }} country={country} />
       <MobileButtonNav element1={MealList} />

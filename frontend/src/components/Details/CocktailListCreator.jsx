@@ -34,12 +34,16 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
         direction="row"
         spacing={1}
       >
-        {cocktailApiItems
-          .filter((item) => item.strIngredient1.includes(listAlcool))
-          .map((item) => {
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <CocktailCard {...item} />;
-          })}
+        {cocktailApiItems ? (
+          cocktailApiItems
+            .filter((item) => item.strIngredient1.includes(listAlcool))
+            .map((item) => {
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              return <CocktailCard {...item} />;
+            })
+        ) : (
+          <Typography variant="h3"> Cocktail in load</Typography>
+        )}
       </Stack>
     </div>
   );

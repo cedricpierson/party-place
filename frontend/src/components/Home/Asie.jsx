@@ -10,20 +10,26 @@ import {
   Stack,
 } from "@mui/material";
 
-export default function MultiActionAreaCard() {
+export default function Asie() {
   return (
-    <Stack>
-      <Card sx={{ maxWidth: 345 }}>
+    <Stack
+      style={{
+        overflowX: "auto",
+      }}
+      direction="row"
+      spacing={1}
+    >
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
         <CardActionArea>
           <CardMedia
             component="img"
             height="140"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
+            image="../../assets/Pays/Asie/Chine.jpg"
+            alt="chine"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Chine
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over
@@ -37,7 +43,7 @@ export default function MultiActionAreaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -47,7 +53,7 @@ export default function MultiActionAreaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Inde
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over
@@ -61,7 +67,7 @@ export default function MultiActionAreaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -71,7 +77,7 @@ export default function MultiActionAreaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Japon
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over
@@ -85,7 +91,7 @@ export default function MultiActionAreaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -95,7 +101,7 @@ export default function MultiActionAreaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Malaisie
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over
@@ -109,7 +115,8 @@ export default function MultiActionAreaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        {" "}
         <CardActionArea>
           <CardMedia
             component="img"
@@ -119,7 +126,79 @@ export default function MultiActionAreaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              Russie
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            C'est Party
+          </Button>
+        </CardActions>
+      </Card>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image="/static/images/cards/contemplative-reptile.jpg"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Thaîlande
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            C'est Party
+          </Button>
+        </CardActions>
+      </Card>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image="/static/images/cards/contemplative-reptile.jpg"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Turquie
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            C'est Party
+          </Button>
+        </CardActions>
+      </Card>
+      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image="/static/images/cards/contemplative-reptile.jpg"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Vietnam
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Lizards are a widespread group of squamate reptiles, with over

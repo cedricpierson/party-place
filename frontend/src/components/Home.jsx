@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import logo from "./Details/partyplace.png";
 import formCountries from "../data/formCountries.json";
-import Selection from "./Home/Selection";
+import Asie from "./Home/Asie";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -114,10 +114,21 @@ export default function Home() {
             >
               C'est Party!
             </Button>
-            <Selection />
           </form>
         )}
       />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Asie
+      </Typography>
+      <Asie />
     </div>
   );
 }

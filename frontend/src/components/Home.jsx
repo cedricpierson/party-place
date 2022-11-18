@@ -7,7 +7,11 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import logo from "./Details/partyplace.png";
 import formCountries from "../data/formCountries.json";
+import Afrique from "./Home/Afrique";
+import AmeriqueNord from "./Home/AmeriqueNord";
+import AmeriqueLatine from "./Home/AmeriqueLatine";
 import Asie from "./Home/Asie";
+import Europe from "./Home/Europe";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -126,9 +130,57 @@ export default function Home() {
         }}
         id="programme"
       >
+        Afrique
+      </Typography>
+      <Afrique />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Amérique du Nord
+      </Typography>
+      <AmeriqueNord />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Amérique Latine
+      </Typography>
+      <AmeriqueLatine />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
         Asie
       </Typography>
       <Asie />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Europe
+      </Typography>
+      <Europe />
     </div>
   );
 }

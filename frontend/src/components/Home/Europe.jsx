@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -10,7 +11,17 @@ import {
   Stack,
 } from "@mui/material";
 
-export default function Asie() {
+export default function Europe() {
+  const [country, setCountry] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleClickCountry = (e) => {
+    e.preventDefault();
+    setCountry(e.target.alt);
+    localStorage.setItem("country", JSON.stringify(country));
+    navigate("/details");
+  };
   return (
     <Stack
       style={{
@@ -26,6 +37,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Croatie.jpg"
             alt="Croatie"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -50,6 +62,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Espagne.jpg"
             alt="Espagne"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -74,6 +87,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/France.jpg"
             alt="France"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -98,6 +112,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Grande-Bretagne.jpg"
             alt="Grande-Bretagne"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -123,6 +138,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Grèce.jpg"
             alt="Grèce"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -147,6 +163,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Hollande.jpg"
             alt="Hollande"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -171,6 +188,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Irlande.jpg"
             alt="Irlande"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -195,6 +213,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Italie.jpg"
             alt="Italie"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -219,6 +238,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Pologne.jpg"
             alt="Pologne"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -243,6 +263,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/Europe/Portugal.jpg"
             alt="Portugal"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

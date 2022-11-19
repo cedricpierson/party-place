@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -10,7 +11,18 @@ import {
   Stack,
 } from "@mui/material";
 
-export default function Asie() {
+export default function AmeriqueLatine() {
+  const [country, setCountry] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleClickCountry = (e) => {
+    e.preventDefault();
+    setCountry(e.target.alt);
+    localStorage.setItem("country", JSON.stringify(country));
+    navigate("/details");
+  };
+
   return (
     <Stack
       style={{
@@ -26,6 +38,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/AmeriqueLatine/Jamaique.jpg"
             alt="Jamaique"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -50,6 +63,7 @@ export default function Asie() {
             height="140"
             image="src/assets/Pays/AmeriqueLatine/Mexique.png"
             alt="Mexique"
+            onClick={handleClickCountry}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

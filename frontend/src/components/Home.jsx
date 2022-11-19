@@ -12,6 +12,9 @@ import AmeriqueNord from "./Home/AmeriqueNord";
 import AmeriqueLatine from "./Home/AmeriqueLatine";
 import Asie from "./Home/Asie";
 import Europe from "./Home/Europe";
+import Menuburger from "./MenuBurger";
+import Footer from "./Footer";
+import ToTopScroll from "./ToTopScroll";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -25,7 +28,11 @@ export default function Home() {
   };
 
   return (
-    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
+    <div
+      className="Details-Page"
+      id="to-top"
+      sx={{ bgcolor: "#primary.light" }}
+    >
       <div
         style={{
           display: "flex",
@@ -34,13 +41,16 @@ export default function Home() {
           backgroundColor: "#D9C468",
         }}
       >
+        <Menuburger />
         <Link to="/">
-          <img src={logo} alt="Party Place Logo" height="100%" />
+          <img src={logo} alt="Party Place Logo" />
         </Link>
       </div>
       <Typography
         variant="h4"
-        sx={{ color: "secondary.main" }}
+        sx={{
+          color: "secondary.main",
+        }}
         style={{
           margin: "1rem",
         }}
@@ -54,6 +64,7 @@ export default function Home() {
         style={{
           marginTop: "1rem",
           marginLeft: "1rem",
+          width: "80vw",
         }}
         id="programme"
       >
@@ -66,8 +77,7 @@ export default function Home() {
         }}
         id="country-select-demo"
         sx={{
-          width: 300,
-          margin: "1rem",
+          width: "80vw",
           display: "flex",
           justifyContent: "center",
         }}
@@ -98,7 +108,7 @@ export default function Home() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              width: "80vw",
+              width: "70vw",
               maxWidth: "450",
             }}
           >
@@ -132,6 +142,53 @@ export default function Home() {
       >
         Afrique
       </Typography>
+
+      <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Link to="/Details">
+          <span
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              margin: "0 0.3rem",
+            }}
+          >
+            Egypte
+          </span>
+        </Link>{" "}
+        <Link to="/Details">
+          <span
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              margin: "0 0.3rem",
+            }}
+          >
+            Kenya
+          </span>
+        </Link>{" "}
+        <Link to="/Details">
+          <span
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              margin: "0 0.3rem",
+            }}
+          >
+            Maroc
+          </span>
+        </Link>{" "}
+        <Link to="/Details">
+          <span
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              margin: "0 0.3rem",
+            }}
+          >
+            Tunisie
+          </span>
+        </Link>{" "}
+      </h6>
       <Afrique />
       <Typography
         variant="h3"
@@ -181,6 +238,8 @@ export default function Home() {
         Europe
       </Typography>
       <Europe />
+      <ToTopScroll />
+      <Footer />
     </div>
   );
 }

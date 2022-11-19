@@ -10,6 +10,8 @@ import MobileButtonNav from "./MobileButtonNav";
 import logo from "./partyplace.png";
 import SpotifyApp from "./SpotifyApp";
 import data from "../../data/data.json";
+import Footer from "../Footer";
+import ToTopScroll from "../ToTopScroll";
 
 function getAllList() {
   const [list, setList] = useState();
@@ -27,7 +29,11 @@ export default function Details() {
   const userName = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
+    <div
+      className="Details-Page"
+      id="to-top"
+      sx={{ bgcolor: "#primary.light" }}
+    >
       <div
         style={{
           display: "flex",
@@ -99,6 +105,8 @@ export default function Details() {
       />
       <SpotifyApp sx={{ margin: "1rem" }} country={country} />
       <MobileButtonNav element1={MealList} />
+      <ToTopScroll />
+      <Footer />
     </div>
   );
 }

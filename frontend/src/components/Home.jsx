@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
@@ -14,6 +15,7 @@ import Europe from "./Home/Europe";
 import Menuburger from "./MenuBurger";
 import Footer from "./Footer";
 import ToTopScroll from "./ToTopScroll";
+import continents from "../data/continents.json";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -130,6 +132,7 @@ export default function Home() {
           </form>
         )}
       />
+
       <Typography
         variant="h3"
         sx={{ color: "secondary.main" }}
@@ -141,55 +144,137 @@ export default function Home() {
       >
         Afrique
       </Typography>
-
       <h6 style={{ margin: "0 0 1rem 1rem" }}>
-        <Link to="/Details">
-          <span
-            style={{
-              textDecoration: "none",
-              color: "#000",
-              margin: "0 0.3rem",
-            }}
-          >
-            Egypte
-          </span>
-        </Link>{" "}
-        <Link to="/Details">
-          <span
-            style={{
-              textDecoration: "none",
-              color: "#000",
-              margin: "0 0.3rem",
-            }}
-          >
-            Kenya
-          </span>
-        </Link>{" "}
-        <Link to="/Details">
-          <span
-            style={{
-              textDecoration: "none",
-              color: "#000",
-              margin: "0 0.3rem",
-            }}
-          >
-            Maroc
-          </span>
-        </Link>{" "}
-        <Link to="/Details">
-          <span
-            style={{
-              textDecoration: "none",
-              color: "#000",
-              margin: "0 0.3rem",
-            }}
-          >
-            Tunisie
-          </span>
-        </Link>{" "}
+        {Object.keys(continents.Afrique).map((continent) => (
+          <Link to="/Details">
+            <span
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          </Link>
+        ))}
       </h6>
       <Afrique />
+
       <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Amérique Latine
+      </Typography>
+
+      <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        {Object.keys(continents["Amérique Latine"]).map((continent) => (
+          <Link to="/Details">
+            <span
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          </Link>
+        ))}
+      </h6>
+      <AmeriqueLatine />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Amérique du Nord
+      </Typography>
+
+      <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        {Object.keys(continents["Amérique du Nord"]).map((continent) => (
+          <Link to="/Details">
+            <span
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          </Link>
+        ))}
+      </h6>
+      <AmeriqueNord />
+
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Asie
+      </Typography>
+      <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        {Object.keys(continents.Asie).map((continent) => (
+          <Link to="/Details">
+            <span
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          </Link>
+        ))}
+      </h6>
+      <Asie />
+      <Typography
+        variant="h3"
+        sx={{ color: "secondary.main" }}
+        style={{
+          marginTop: "1rem",
+          marginLeft: "1rem",
+        }}
+        id="programme"
+      >
+        Europe
+      </Typography>
+
+      <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        {Object.keys(continents.Europe).map((continent) => (
+          <Link to="/Details">
+            <span
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          </Link>
+        ))}
+      </h6>
+      <Europe />
+
+      {/* <Typography
         variant="h3"
         sx={{ color: "secondary.main" }}
         style={{
@@ -236,7 +321,7 @@ export default function Home() {
       >
         Europe
       </Typography>
-      <Europe />
+      <Europe /> */}
       <ToTopScroll />
       <Footer />
     </div>

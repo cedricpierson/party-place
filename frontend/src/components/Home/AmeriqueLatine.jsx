@@ -10,6 +10,7 @@ import {
   Card,
   Stack,
 } from "@mui/material";
+import continents from "../../data/continents.json";
 
 export default function AmeriqueLatine() {
   const [country, setCountry] = useState("");
@@ -31,56 +32,29 @@ export default function AmeriqueLatine() {
       direction="row"
       spacing={1}
     >
-      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="src/assets/Pays/AmeriqueLatine/Jamaique.jpg"
-            alt="Jamaique"
-            onClick={handleClickCountry}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Jamaique
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            C'est Party
-          </Button>
-        </CardActions>
-      </Card>
-      <Card sx={{ minWidth: "50vw", height: "50vw" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="src/assets/Pays/AmeriqueLatine/Mexique.png"
-            alt="Mexique"
-            onClick={handleClickCountry}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Mexique
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            C'est Party
-          </Button>
-        </CardActions>
-      </Card>
+      {Object.keys(continents["Amérique Latine"]).map((coun) => (
+        <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image={continents["Amérique Latine"][coun]}
+              alt={coun}
+              onClick={handleClickCountry}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {coun}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              C'est Party
+            </Button>
+          </CardActions>
+        </Card>
+      ))}
     </Stack>
   );
 }

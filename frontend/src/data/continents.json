@@ -1,38 +1,38 @@
 {
  "Afrique": {
-     "Egypte": "../../assets/Pays/Afrique/Egypte.jpg",
-     "Kenya": "../../assets/Pays/Afrique/Kenya.jpg",
-     "Maroc": "../../assets/Pays/Afrique/Maroc.jpg",	
-     "Tunisie": "../../assets/Pays/Afrique/Tunisie.jpg"
+     "Egypte": "src/assets/Pays/Afrique/Egypte.jpg",
+     "Kenya": "src/assets/Pays/Afrique/Kenya.jpg",
+     "Maroc": "src/assets/Pays/Afrique/Maroc.jpg",	
+     "Tunisie": "src/assets/Pays/Afrique/Tunisie.jpg"
  },
 "Amérique du Nord": {
-    "Canada": "../../assets/Pays/AmeriqueNord/Canada.jpg",
-"Etats-Unis": "../../assets/Pays/AmeriqueNord/Etats-Unis.jpg"
+    "Canada": "src/assets/Pays/AmeriqueNord/Canada.jpg",
+"Etats-Unis": "src/assets/Pays/AmeriqueNord/Etats-Unis.jpg"
 },
 "Amérique Latine": {
-    "Jamaïque": "../../assets/Pays/AmeriqueLatine/Jamaique.jpg",
-    "Méxique": "../../assets/Pays/AmeriqueLatine/Mexique.png"
+    "Jamaïque": "src/assets/Pays/AmeriqueLatine/Jamaique.jpg",
+    "Méxique": "src/assets/Pays/AmeriqueLatine/Mexique.png"
 },
 "Asie": {
-    "Chine": "../../assets/Pays/Asie/Chine.jpg",
-    "Inde": "../../assets/Pays/Asie/Inde.jpg",
-    "Japon": "../../assets/Pays/Asie/Japon.jpeg",
-    "Malaisie": "../../assets/Pays/Asie/Malaisie.jpg",
-    "Russie": "../../assets/Pays/Asie/Russie.jpg",
-    "Thaïlande": "../../assets/Pays/Asie/Thailande.jpg",
-    "Turquie": "../../assets/Pays/Asie/Turquie.jpg",
-    "Vietnam": "../../assets/Pays/Asie/Vietnam.jpg"
+    "Chine": "src/assets/Pays/Asie/Chine.jpg",
+    "Inde": "src/assets/Pays/Asie/Inde.jpg",
+    "Japon": "src/assets/Pays/Asie/Japon.jpeg",
+    "Malaisie": "src/assets/Pays/Asie/Malaisie.jpg",
+    "Russie": "src/assets/Pays/Asie/Russie.jpg",
+    "Thaïlande": "src/assets/Pays/Asie/Thailande.jpg",
+    "Turquie": "src/assets/Pays/Asie/Turquie.jpg",
+    "Vietnam": "src/assets/Pays/Asie/Vietnam.jpg"
 },
 "Europe": {
-    "Croatie": "../../assets/Pays/Europe/Croatie.jpg",
-    "Espagne": "../../assets/Pays/Europe/Espagne.jpg",
-    "France": "../../assets/Pays/Europe/France.jpg",
-    "Grande-Bretagne": "../../assets/Pays/Europe/Grande-Bretagne.jpg",
-    "Grèce": "../../assets/Pays/Europe/Grèce.jpg",
-    "Hollande"	: "../../assets/Pays/Europe/Hollande.jpg",
-    "Irlande": "../../assets/Pays/Europe/Irlande.jpg",
-    "Italie": "../../assets/Pays/Europe/Italie.jpg",
-    "Pologne": "../../assets/Pays/Europe/Pologne.jpg",
-    "Portugal": "../../assets/Pays/Europe/Portugal.jpg"
+    "Croatie": "src/assets/Pays/Europe/Croatie.jpg",
+    "Espagne": "src/assets/Pays/Europe/Espagne.jpg",
+    "France": "src/assets/Pays/Europe/France.jpg",
+    "Grande-Bretagne": "src/assets/Pays/Europe/Grande-Bretagne.jpg",
+    "Grèce": "src/assets/Pays/Europe/Grèce.jpg",
+    "Hollande"	: "src/assets/Pays/Europe/Hollande.jpg",
+    "Irlande": "src/assets/Pays/Europe/Irlande.jpg",
+    "Italie": "src/assets/Pays/Europe/Italie.jpg",
+    "Pologne": "src/assets/Pays/Europe/Pologne.jpg",
+    "Portugal": "src/assets/Pays/Europe/Portugal.jpg"
 }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
@@ -117,7 +116,7 @@ export default function Home() {
               label="Choisir un pays"
               inputProps={{
                 ...params.inputProps,
-                autoComplete: "new-password", // disable autocomplete and autofill
+                autoComplete: "new-password",
               }}
               onChange={(e) => setCountry(e.target.value)}
             />
@@ -243,8 +242,6 @@ export default function Home() {
     </div>
   );
 }
-
-// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 
 Home.propTypes = {
   country: PropTypes.string.isRequired,

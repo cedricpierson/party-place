@@ -22,7 +22,7 @@ const Root = styled("div")(({ theme }) => ({
 
 export default function Menuburger() {
   const [open, setState] = useState(false);
-  const toggleDrawer = () => (event) => {
+  const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -40,10 +40,9 @@ export default function Menuburger() {
           height: "100vh",
           display: "flex",
           alignItems: "center",
-          backgroundColor: "#C2A835",
         }}
       >
-        <Container sx={{ bgcolor: "#C2A835" }}>
+        <Container>
           <Toolbar
             sx={{
               display: "flex",
@@ -109,17 +108,6 @@ export default function Menuburger() {
                     />
                   </ListItemButton>
                 </Box>
-
-                {/* <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    position: "absolute",
-                    bottom: "0",
-                    left: "50%",
-                    transform: "translate(-50%, 0)",
-                  }}
-                ></Box> */}
               </Box>
             </Drawer>
           </Toolbar>

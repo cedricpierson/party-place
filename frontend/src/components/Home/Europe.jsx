@@ -28,12 +28,13 @@ export default function Europe() {
     <Stack
       style={{
         overflowX: "auto",
+        margin: "1rem",
       }}
       direction="row"
       spacing={1}
     >
       {Object.keys(continents.Europe).map((coun) => (
-        <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        <Card sx={{ minWidth: "200px", height: "200px" }}>
           <CardActionArea>
             <CardMedia
               component="img"

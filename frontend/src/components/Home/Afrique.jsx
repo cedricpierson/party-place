@@ -33,7 +33,7 @@ export default function Afrique() {
       spacing={1}
     >
       {Object.keys(continents.Afrique).map((coun) => (
-        <Card sx={{ minWidth: "50vw", height: "50vw" }}>
+        <Card sx={{ minWidth: "200px", height: "200px" }}>
           <CardActionArea>
             <CardMedia
               component="img"

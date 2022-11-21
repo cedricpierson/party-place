@@ -7,7 +7,7 @@
  },
 "Amérique du Nord": {
     "Canada": "src/assets/Pays/AmeriqueNord/Canada.jpg",
-"Etats-Unis": "src/assets/Pays/AmeriqueNord/Etats-Unis.jpg"
+"États-Unis": "src/assets/Pays/AmeriqueNord/Etats-Unis.jpg"
 },
 "Amérique Latine": {
     "Jamaïque": "src/assets/Pays/AmeriqueLatine/Jamaique.jpg",
@@ -29,7 +29,7 @@
     "France": "src/assets/Pays/Europe/France.jpg",
     "Grande-Bretagne": "src/assets/Pays/Europe/Grande-Bretagne.jpg",
     "Grèce": "src/assets/Pays/Europe/Grèce.jpg",
-    "Hollande"	: "src/assets/Pays/Europe/Hollande.jpg",
+    "Pays-Bas"	: "src/assets/Pays/Europe/Hollande.jpg",
     "Irlande": "src/assets/Pays/Europe/Irlande.jpg",
     "Italie": "src/assets/Pays/Europe/Italie.jpg",
     "Pologne": "src/assets/Pays/Europe/Pologne.jpg",

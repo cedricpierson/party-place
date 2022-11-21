@@ -55,11 +55,15 @@
         "gentillet":"Japanese",
         "alcool1":"Midori melon liqueur",
         "defaultPlaylistId":"0ig2IiVTh2rnTcTgHZPHPi"},
-    "Malaysie":{
+    "Kenya":{
+        "gentillet":"Kenyan",
+        "alcool1":"Gin",
+        "defaultPlaylistId":"6E9F4QcrnT0uioLgL0EJSa"},
+    "Malaisie":{
         "gentillet":"Malaysian",
         "alcool1":"Firewater",
         "defaultPlaylistId":"3MH85EO45A05xfkWJHZOMv"},
-    "Mexique":{
+    "Méxique":{
         "gentillet":"Mexican",
         "alcool1":"Tequila",
         "defaultPlaylistId":"5CprLYitYtfBOme6c36TRV"},

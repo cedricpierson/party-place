@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,15 +13,13 @@ import {
 import continents from "../../data/continents.json";
 
 export default function AmeriqueNord() {
-  const [country, setCountry] = useState("");
-
   const navigate = useNavigate();
 
   const handleClickCountry = (e) => {
     e.preventDefault();
-    setCountry(e.target.alt);
+    const country = e.target.alt;
     localStorage.setItem("country", JSON.stringify(country));
-    navigate("/details");
+    navigate("/details#to-top");
   };
 
   return (
@@ -34,7 +32,13 @@ export default function AmeriqueNord() {
       spacing={1}
     >
       {Object.keys(continents["Amérique du Nord"]).map((coun) => (
-        <Card sx={{ minWidth: "200px", height: "200px" }}>
+        <Card
+          sx={{
+            minWidth: "200px",
+            height: "200px",
+            backgroundColor: "primary.main",
+          }}
+        >
           <CardActionArea>
             <CardMedia
               component="img"

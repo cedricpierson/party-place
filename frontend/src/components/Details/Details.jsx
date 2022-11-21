@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography } from "@mui/material/";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
 import allListbyLetter from "./Divers/getMealsApi";
 import drinks from "./Divers/ApiSim2";
@@ -27,13 +27,14 @@ export default function Details() {
   const country = JSON.parse(localStorage.getItem("country"));
   const mealsApi = getAllList();
   const userName = JSON.parse(localStorage.getItem("user"));
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
-    <div
-      className="Details-Page"
-      id="to-top"
-      sx={{ bgcolor: "#primary.light" }}
-    >
+    <div className="Details-Page" id="to-top" sx={{ bgcolor: "primary.light" }}>
       <div
         style={{
           display: "flex",

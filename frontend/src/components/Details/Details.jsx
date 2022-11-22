@@ -59,7 +59,7 @@ export default function Details() {
         {userName}
       </Typography>
       <Typography
-        variant="h2"
+        variant="h3"
         sx={{ color: "secondary.main" }}
         style={{
           display: "flex",

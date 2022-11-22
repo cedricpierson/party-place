@@ -38,8 +38,7 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
           cocktailApiItems
             .filter((item) => item.strIngredient1.includes(listAlcool))
             .map((item) => {
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              return <CocktailCard {...item} />;
+              return <CocktailCard cocktail={item} />;
             })
         ) : (
           <Typography variant="h3"> Cocktail in load</Typography>
@@ -52,6 +51,5 @@ export default CocktailList;
 
 CocktailList.propTypes = {
   cocktailApiItems: PropTypes.isRequired,
-  item: PropTypes.isRequired,
   listAlcool: PropTypes.isRequired,
 };

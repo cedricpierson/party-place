@@ -11,33 +11,39 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
       id="cocktail"
       className="Cocktails"
       style={{
-        height: "55vh",
-        paddingLeft: "1rem",
         backgroundColor: "inherit",
+        marginTop: "2rem",
+        paddingLeft: "1rem",
       }}
     >
       <Typography
         variant="h3"
         style={{ display: "flex", alignItems: "center" }}
+        sx={{ color: "secondary.main" }}
       >
         <LocalBarIcon fontSize="Large" />
         Cocktail à savourer
       </Typography>
       <Stack
         style={{
-          height: "45vh",
+          height: "55vw",
+          marginTop: "1rem",
           overflowX: "scroll",
           alignItems: "center",
         }}
         direction="row"
         spacing={1}
       >
-        {cocktailApiItems
-          .filter((item) => item.strIngredient1.includes(listAlcool))
-          .map((item) => {
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <CocktailCard {...item} />;
-          })}
+        {cocktailApiItems ? (
+          cocktailApiItems
+            .filter((item) => item.strIngredient1.includes(listAlcool))
+            .map((item) => {
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              return <CocktailCard {...item} />;
+            })
+        ) : (
+          <Typography variant="h3"> Cocktail in load</Typography>
+        )}
       </Stack>
     </div>
   );

@@ -32,12 +32,13 @@ export default function CocktailCard(props) {
     <Card
       className="CocktailCard"
       sx={{
-        width: "35vw",
-        height: "40vh",
+        width: "50vw",
+        height: "50vw",
+        display: "flex",
         bgcolor: "primary.main",
       }}
       style={{
-        minWidth: "35vw",
+        minWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -58,15 +59,25 @@ export default function CocktailCard(props) {
           }}
           sx={{ fontSize: "1.3rem" }}
         >
-          {objet.strDrink}
+          <Typography
+            align="center"
+            variant="h5"
+            sx={{ color: "primary.lighter" }}
+          >
+            {objet.strDrink}
+          </Typography>
         </Button>
-        <Typography align="center" variant="h4">
+        <Typography
+          align="center"
+          variant="h5"
+          sx={{ color: "primary.lighter" }}
+        >
           {objet.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Card
-              sx={{ width: "100%", height: "100%", bgcolor: "#FDF0CA" }}
+              sx={{ width: "100%", height: "100%", bgcolor: "primary.lighter" }}
               style={{ overflowY: "scroll" }}
             >
               <CardHeader

@@ -32,12 +32,13 @@ export default function MealCard(props) {
     <Card
       className="MealCard"
       sx={{
-        width: "35vw",
-        height: "40vh",
+        width: "50vw",
+        height: "50vw",
+        display: "flex",
         bgcolor: "primary.main",
       }}
       style={{
-        minWidth: "35vw",
+        minWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -49,25 +50,33 @@ export default function MealCard(props) {
         src={objet.strMealThumb}
         alt={objet.strMeal}
       />
-      <CardContent>
+      <CardContent style={{ padding: 0 }}>
         <Button
           onClick={handleOpen}
           style={{
             color: "inherit",
-            padding: "2rem 2rem 0rem 2rem",
           }}
-          sx={{ fontSize: "1.3rem" }}
         >
-          {objet.strMeal}
+          <Typography
+            align="center"
+            variant="body1"
+            sx={{ color: "primary.lighter" }}
+          >
+            {objet.strMeal}
+          </Typography>
         </Button>
-        <Typography align="center" variant="h4">
+        <Typography
+          align="center"
+          variant="body2"
+          sx={{ color: "primary.darker" }}
+        >
           {objet.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
             <Card
               style={{ overflowY: "scroll" }}
-              sx={{ width: "100%", height: "100%", bgcolor: "secondary.main" }}
+              sx={{ width: "100%", height: "100%", bgcolor: "primary.lighter" }}
             >
               <CardHeader align="center" title={objet.strMeal} />
               <CardMedia

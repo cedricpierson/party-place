@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-function MobileButtonNav() {
+export default function MobileButtonNav() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -58,5 +58,3 @@ function MobileButtonNav() {
     </Box>
   );
 }
-
-export default MobileButtonNav;

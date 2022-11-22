@@ -1,11 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
+import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import CocktailCard from "./caroussel/CocktailCard";
 
-function CocktailList({ cocktailApiItems, listAlcool }) {
+function CocktailList({ cocktailApiItems, Alcool1, Alcool2 }) {
   return (
     <div
       id="cocktail"
@@ -28,6 +29,7 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
         style={{
           height: "55vw",
           marginTop: "1rem",
+          maxHeight: "65vh",
           overflowX: "scroll",
           alignItems: "center",
         }}
@@ -36,13 +38,24 @@ function CocktailList({ cocktailApiItems, listAlcool }) {
       >
         {cocktailApiItems ? (
           cocktailApiItems
-            .filter((item) => item.strIngredient1.includes(listAlcool))
+            .filter(
+              (item) =>
+                item.strIngredient1.includes(Alcool1) ||
+                item.strIngredient2.includes(Alcool1) ||
+                item.strIngredient1.includes(Alcool2) ||
+                item.strIngredient2.includes(Alcool2)
+            )
             .map((item) => {
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              return <CocktailCard {...item} />;
+              return <CocktailCard cocktail={item} />;
             })
         ) : (
-          <Typography variant="h3"> Cocktail in load</Typography>
+          <Skeleton
+            sx={{ bgcolor: "primary.light" }}
+            animation="pulse"
+            variant="rounded"
+            width="100vw"
+            height="55vw"
+          />
         )}
       </Stack>
     </div>
@@ -52,6 +65,6 @@ export default CocktailList;
 
 CocktailList.propTypes = {
   cocktailApiItems: PropTypes.isRequired,
-  item: PropTypes.isRequired,
-  listAlcool: PropTypes.isRequired,
+  Alcool1: PropTypes.isRequired,
+  Alcool2: PropTypes.isRequired,
 };

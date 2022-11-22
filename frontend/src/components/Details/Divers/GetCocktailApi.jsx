@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-async function getList(letter) {
+async function getCocktailList(letter) {
   const response = await axios.get(
-    `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
   );
-  const list = response.data.meals;
+  const list = response.data.drinks;
   return list;
 }
-async function allListbyLetter() {
+async function allListFusion() {
   const tabLetter = [
     "a",
     "b",
@@ -26,24 +26,26 @@ async function allListbyLetter() {
     "n",
     "o",
     "p",
+    "q",
     "r",
     "s",
     "t",
     "v",
     "w",
     "y",
+    "z",
   ];
   let AllList = [];
   for await (const letter of tabLetter) {
-    const listProv = await getList(letter);
+    const listProv = await getCocktailList(letter);
     AllList = AllList.concat(listProv);
   }
   return AllList;
 }
-export default function getAllList() {
+export default function getAllCocktail() {
   const [list, setList] = useState();
   useEffect(() => {
-    allListbyLetter().then((response) => {
+    allListFusion().then((response) => {
       setList(response);
     });
   }, []);

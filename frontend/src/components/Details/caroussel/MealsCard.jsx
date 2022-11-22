@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -23,11 +24,10 @@ const style = {
   borderRadius: "10px",
 };
 
-export default function MealCard(props) {
+export default function MealCard({ recette }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const objet = props;
   return (
     <Card
       className="MealCard"
@@ -39,6 +39,7 @@ export default function MealCard(props) {
       }}
       style={{
         minWidth: "40vw",
+        maxWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -47,8 +48,8 @@ export default function MealCard(props) {
       <CardMedia
         component="img"
         height="100"
-        src={objet.strMealThumb}
-        alt={objet.strMeal}
+        src={recette.strMealThumb}
+        alt={recette.strMeal}
       />
       <CardContent style={{ padding: 0 }}>
         <Button
@@ -59,10 +60,10 @@ export default function MealCard(props) {
         >
           <Typography
             align="center"
-            variant="body1"
+            variant="body2"
             sx={{ color: "primary.lighter" }}
           >
-            {objet.strMeal}
+            {recette.strMeal}
           </Typography>
         </Button>
         <Typography
@@ -70,7 +71,7 @@ export default function MealCard(props) {
           variant="body2"
           sx={{ color: "primary.darker" }}
         >
-          {objet.strCategory}
+          {recette.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
@@ -78,15 +79,15 @@ export default function MealCard(props) {
               style={{ overflowY: "scroll" }}
               sx={{ width: "100%", height: "100%", bgcolor: "primary.lighter" }}
             >
-              <CardHeader align="center" title={objet.strMeal} />
+              <CardHeader align="center" title={recette.strMeal} />
               <CardMedia
                 component="img"
                 height="50%"
-                src={objet.strMealThumb}
-                alt={objet.strMeal}
+                src={recette.strMealThumb}
+                alt={recette.strMeal}
               />
               <CardContent style={{ padding: "1rem" }}>
-                <IngredientTable objet={objet} />
+                <IngredientTable objet={recette} />
               </CardContent>
             </Card>
           </Box>
@@ -95,3 +96,6 @@ export default function MealCard(props) {
     </Card>
   );
 }
+MealCard.propTypes = {
+  recette: PropTypes.isRequired,
+};

@@ -1,6 +1,9 @@
+import Typography from "@mui/material/Typography";
+import { Button, Box, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Box, Button, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Welcomepage from "./Welcomepage";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -20,7 +23,6 @@ export default function Landing() {
     }
     return setUser(userName);
   }, []);
-
   return (
     <Box
       sx={{
@@ -31,6 +33,8 @@ export default function Landing() {
         height: "100vh",
       }}
     >
+      <Header />
+      <Welcomepage />
       <Typography
         variant="h3"
         sx={{ color: "secondary.main" }}

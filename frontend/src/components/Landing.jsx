@@ -1,7 +1,10 @@
+import Typography from "@mui/material/Typography";
+import { Button, Box, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Box, Button, TextField, Typography } from "@mui/material";
 import Menuburger from "./MenuBurger";
 import Footer from "./Footer";
+import Header from "./Header";
+import Welcomepage from "./Welcomepage";
 
 export default function Landing() {
   const [user, setUser] = useState("");
@@ -13,7 +16,6 @@ export default function Landing() {
     }
     return setUser(userName);
   }, []);
-
   return (
     <div>
       <Menuburger sx={{ zIndex: "1000" }} />
@@ -26,6 +28,8 @@ export default function Landing() {
           height: "70vh",
         }}
       >
+        <Header />
+        <Welcomepage />
         <Typography
           variant="h3"
           sx={{ color: "secondary.main", zIndex: "1200" }}

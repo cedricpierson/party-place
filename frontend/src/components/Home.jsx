@@ -9,7 +9,7 @@ import { PropTypes } from "prop-types";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import logo from "./Details/partyplace.png";
+import logo from "./Logoheaderlight.png";
 import formCountries from "../data/formCountries.json";
 import Afrique from "./Home/Afrique";
 import AmeriqueNord from "./Home/AmeriqueNord";

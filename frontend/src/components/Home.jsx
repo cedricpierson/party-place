@@ -131,6 +131,7 @@ export default function Home() {
                   autoComplete: "new-password",
                 }}
                 onChange={(e) => setCountry(e.target.value)}
+                required
               />
               <Button
                 sx={{ borderRadius: "20px", m: "0.3rem" }}
@@ -157,6 +158,7 @@ export default function Home() {
         <h6 style={{ margin: "0 0 1rem 1rem" }}>
           {Object.keys(continents.Afrique).map((continent) => (
             <span
+              key={continent}
               onClick={handleSubmitCountry}
               style={{
                 textDecoration: "none",

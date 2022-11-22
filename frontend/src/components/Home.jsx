@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 import { Box, Button, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import logo from "./Details/partyplace.png";
+import logo from "./Logoheaderlight.png";
 import formCountries from "../data/formCountries.json";
 
 export default function Home() {
@@ -19,8 +19,125 @@ export default function Home() {
     navigate("/details");
   };
 
-function Home() {
-  return console.warn("Spotify");
+  return (
+    <div
+      className="Details Page"
+      style={{
+        background: "linear-gradient(to right, #FFF5EC 80%, #D9C46B 20%)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Link to="/">
+          <img src={logo} alt="Party Place Logo" width="80%" />
+        </Link>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography
+          variant="h5"
+          position="absolute"
+          top="1rem"
+          left="1rem"
+          sx={{ color: "grey.0" }}
+          style={{
+            textAlign: "right",
+            marginRight: "1rem",
+          }}
+          id="username"
+        >
+          {userName}
+        </Typography>
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          id="programme"
+        >
+          Où Allons Nous Ce Soir ?
+        </Typography>
+        <Autocomplete
+          inputValue={country}
+          onInputChange={(event, newInputValue) => {
+            setCountry(newInputValue);
+          }}
+          id="country-select-demo"
+          sx={{
+            width: 300,
+            margin: "1rem",
+            display: "flex",
+            justifyContent: "center",
+          }}
+          options={formCountries.countries}
+          autoHighlight
+          getOptionLabel={(option) => option.label}
+          renderOption={(props, option) => (
+            <Box
+              component="li"
+              sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+              {...props}
+            >
+              <img
+                loading="lazy"
+                width="20"
+                src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                alt=""
+              />
+              {option.label}
+            </Box>
+          )}
+          renderInput={(params) => (
+            <form
+              onSubmit={handleSubmitCountry}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "80vw",
+                maxWidth: "450",
+              }}
+            >
+              <TextField
+                {...params}
+                label="Choisir un pays"
+                inputProps={{
+                  ...params.inputProps,
+                  autoComplete: "new-password", // disable autocomplete and autofill
+                }}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+              <Button
+                sx={{ borderRadius: "20px", m: "0.3rem", marginTop: "20px" }}
+                variant="outlined"
+                type="submit"
+              >
+                C'est Party!
+              </Button>
+            </form>
+          )}
+        />
+      </div>
+    </div>
+  );
 }
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js

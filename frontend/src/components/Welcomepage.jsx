@@ -1,14 +1,26 @@
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import React, { useState, useEffect } from "react";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import bgImg from "../assets/champagne3.jpg";
 
 function Welcomepage() {
-  const [userInput, setUserInput] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setUserInput(`${userInput}`);
-  };
+  const [user, setUser] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/home");
+  }
+
+  const userName = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    if (!userName) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    return setUser(userName);
+  }, []);
 
   return (
     <div
@@ -17,50 +29,81 @@ function Welcomepage() {
         flexDirection: "column",
         alignItems: "center",
         fontSize: "20px",
+        color: "#2E266F",
         backgroundImage: `url(${bgImg})`,
         minHeight: "80%",
         backgroundSize: "cover",
       }}
     >
       <div
+        sx={{ color: "secondary.main" }}
         style={{
           display: "flex",
           flexDirection: "column",
+          textAlign: "center",
           alignItems: "center",
-          marginBottom: "150px",
+          fontSize: "20px",
+          marginBottom: "1rem",
+          marginTop: "2rem",
         }}
       >
         <h5>Un apéro dinatoire aux couleurs de l'Italie?</h5>
         <h5>Votre anniversaire au rythme de la salsa?</h5>
-        <h5>Laissez-vous guider</h5>
-        <form style={{}}>
-          <input
-            style={{
-              height: "34px",
-              borderRadius: "17px 0px 0px 17px",
-              paddingLeft: "15px",
+        <div>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              height: "100vh",
             }}
-            type="text"
-            placeholder="Votre Nom"
-            value={userInput}
-            onChange={(event) => setUserInput(event.target.value)}
-          />
-
-          <Button
-            sx={{ color: "primary.lighter", bgcolor: "primary.main" }}
-            style={{
-              height: "32px",
-              width: "50px",
-              borderRadius: "0px 17px 17px 0px",
-              fontSize: "15px",
-              marginTop: "4px",
-            }}
-            onClick={handleSubmit}
           >
-            {" "}
-            GO{" "}
-          </Button>
-        </form>
+            <Typography
+              variant="h3"
+              sx={{ color: "secondary.main" }}
+              style={{
+                display: "flex",
+                textAlign: "center",
+                alignItems: "center",
+                marginBottom: "1rem",
+                marginTop: "2rem",
+              }}
+              id="playlist"
+            >
+              Laissez-vous guider
+            </Typography>
+            <form
+              onSubmit={handleSubmit}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <TextField
+                sx={{ borderRadius: "5px" }}
+                id="user"
+                label="Votre nom"
+                type="text"
+                style={{ backgroundColor: "#ffffcd" }}
+                onChange={(e) => setUser(e.target.value)}
+                // sx={{ width: "70vw" }}
+                required
+              />
+
+              <Button
+                sx={{ borderRadius: "20px", m: "0.3rem" }}
+                variant="outlined"
+                type="submit"
+                style={{ color: "#2E266F", border: "none" }}
+              >
+                C'est Party!
+              </Button>
+            </form>
+          </Box>
+        </div>
       </div>
     </div>
   );

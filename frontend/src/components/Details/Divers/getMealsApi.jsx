@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 async function getList(letter) {
   const response = await axios.get(
@@ -7,7 +8,7 @@ async function getList(letter) {
   const list = response.data.meals;
   return list;
 }
-export default async function allListbyLetter() {
+async function allListbyLetter() {
   const tabLetter = [
     "a",
     "b",
@@ -38,4 +39,13 @@ export default async function allListbyLetter() {
     AllList = AllList.concat(listProv);
   }
   return AllList;
+}
+export default function getAllList() {
+  const [list, setList] = useState();
+  useEffect(() => {
+    allListbyLetter().then((response) => {
+      setList(response);
+    });
+  }, []);
+  return list;
 }

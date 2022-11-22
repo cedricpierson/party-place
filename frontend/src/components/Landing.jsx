@@ -1,81 +1,13 @@
-import Typography from "@mui/material/Typography";
-import { Button, Box, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import Menuburger from "./MenuBurger";
+import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Welcomepage from "./Welcomepage";
 
 export default function Landing() {
-  const [user, setUser] = useState("");
-
-  const userName = JSON.parse(localStorage.getItem("user"));
-  useEffect(() => {
-    if (!userName) {
-      localStorage.setItem("user", JSON.stringify(user));
-    }
-    return setUser(userName);
-  }, []);
   return (
     <div>
-      <Menuburger sx={{ zIndex: "1000" }} />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "70vh",
-        }}
-      >
-        <Header />
-        <Welcomepage />
-        <Typography
-          variant="h3"
-          sx={{ color: "secondary.main", zIndex: "1200" }}
-          style={{
-            display: "flex",
-            textAlign: "center",
-            alignItems: "center",
-            marginBottom: "1rem",
-            marginTop: "2rem",
-          }}
-          id="playlist"
-        >
-          Laissez-Vous Guider
-        </Typography>
-        <form
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <TextField
-            sx={{
-              borderRadius: "7px",
-              width: "80vw",
-              maxWidth: "500px",
-              zIndex: "1200",
-              backgroundColor: "primary.contrastText",
-            }}
-            id="user"
-            label="Votre nom"
-            type="text"
-            onChange={(e) => setUser(e.target.value)}
-            required
-          />
-
-          <Button
-            sx={{ borderRadius: "20px", m: "0.3rem" }}
-            variant="outlined"
-            type="submit"
-          >
-            C'est Party!
-          </Button>
-        </form>
-      </Box>
+      <Header />
+      <Welcomepage />
       <Footer />
     </div>
   );

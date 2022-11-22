@@ -39,6 +39,7 @@ export default function MealCard({ recette }) {
       }}
       style={{
         minWidth: "40vw",
+        maxWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -59,7 +60,7 @@ export default function MealCard({ recette }) {
         >
           <Typography
             align="center"
-            variant="body1"
+            variant="body2"
             sx={{ color: "primary.lighter" }}
           >
             {recette.strMeal}

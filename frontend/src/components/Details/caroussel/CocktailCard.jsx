@@ -39,6 +39,7 @@ export default function CocktailCard({ cocktail }) {
       }}
       style={{
         minWidth: "40vw",
+        maxWidth: "40vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -50,18 +51,16 @@ export default function CocktailCard({ cocktail }) {
         src={cocktail.strDrinkThumb}
         alt={cocktail.strDrink}
       />
-      <CardContent>
+      <CardContent style={{ padding: 0 }}>
         <Button
           onClick={handleOpen}
           style={{
             color: "inherit",
-            padding: "2rem 2rem 0rem 2rem",
           }}
-          sx={{ fontSize: "1.3rem" }}
         >
           <Typography
             align="center"
-            variant="h5"
+            variant="body2"
             sx={{ color: "primary.lighter" }}
           >
             {cocktail.strDrink}
@@ -69,8 +68,8 @@ export default function CocktailCard({ cocktail }) {
         </Button>
         <Typography
           align="center"
-          variant="h5"
-          sx={{ color: "primary.lighter" }}
+          variant="body2"
+          sx={{ color: "primary.darker" }}
         >
           {cocktail.strCategory}
         </Typography>

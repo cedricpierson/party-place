@@ -7,7 +7,7 @@ import drinks from "./Divers/ApiSim2";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";
-import logo from "./partyplace.png";
+import logo from "../Logoheaderlight.png";
 import SpotifyApp from "./SpotifyApp";
 import data from "../../data/data.json";
 
@@ -27,17 +27,21 @@ export default function Details() {
   const userName = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
+    <div
+      className="Details Page"
+      style={{
+        background: "linear-gradient(to right, #FFF5EC 80%, #D9C46B 20%)",
+      }}
+    >
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#D9C468",
         }}
       >
         <Link to="/">
-          <img src={logo} alt="Party Place Logo" height="100%" />
+          <img src={logo} alt="Party Place Logo" width="80%" />
         </Link>
       </div>
       <Typography
@@ -70,14 +74,15 @@ export default function Details() {
       </Typography>
       <Card
         style={{
-          margin: "1rem 1rem 1rem 0",
+          margin: "1rem 1rem 1rem 1rem",
           display: "flex",
           justifyContent: "flex-start",
         }}
         sx={{
           display: "flex",
           bgcolor: "primary.main",
-          borderRadius: "0 20px 20px 0",
+          borderRadius: "10px",
+          width: "78%",
         }}
       >
         <Typography

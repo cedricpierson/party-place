@@ -124,6 +124,7 @@ export default function Home() {
                   autoComplete: "new-password", // disable autocomplete and autofill
                 }}
                 onChange={(e) => setCountry(e.target.value)}
+                style={{ backgroundColor: "white", borderRadius: "5px" }}
               />
               <Button
                 sx={{ borderRadius: "20px", m: "0.3rem", marginTop: "20px" }}

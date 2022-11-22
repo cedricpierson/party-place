@@ -3,7 +3,7 @@ import { Card, Typography } from "@mui/material/";
 import { Link } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
 import getAllList from "./Divers/getMealsApi";
-import drinks from "./Divers/ApiSim2";
+import getAllCocktail from "./Divers/GetCocktailApi";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
 import MobileButtonNav from "./MobileButtonNav";
@@ -14,6 +14,7 @@ import data from "../../data/data.json";
 export default function Details() {
   const country = JSON.parse(localStorage.getItem("country"));
   const mealsApi = getAllList();
+  const CocktailApi = getAllCocktail();
   const userName = JSON.parse(localStorage.getItem("user"));
 
   return (
@@ -88,8 +89,9 @@ export default function Details() {
       <CocktailList
         sx={{ margin: "1rem" }}
         id="cocktail"
-        cocktailApiItems={drinks}
-        listAlcool={data[country].alcool1}
+        cocktailApiItems={CocktailApi}
+        Alcool1={data[country].alcool1}
+        Alcool2={data[country].alcool2}
       />
       <SpotifyApp sx={{ margin: "1rem" }} country={country} />
       <MobileButtonNav element1={MealList} />

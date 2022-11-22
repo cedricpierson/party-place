@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import Menuburger from "./MenuBurger";
 import Footer from "./Footer";
 
 export default function Landing() {
-  const navigate = useNavigate();
-
   const [user, setUser] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate("/home");
-  }
 
   const userName = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
@@ -50,7 +41,6 @@ export default function Landing() {
           Laissez-Vous Guider
         </Typography>
         <form
-          onSubmit={handleSubmit}
           style={{
             display: "flex",
             flexDirection: "column",

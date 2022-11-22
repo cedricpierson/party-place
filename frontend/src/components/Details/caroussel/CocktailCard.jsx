@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -23,11 +24,10 @@ const style = {
   borderRadius: "10px",
 };
 
-export default function CocktailCard(props) {
+export default function CocktailCard({ cocktail }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const objet = props;
   return (
     <Card
       className="CocktailCard"
@@ -47,8 +47,8 @@ export default function CocktailCard(props) {
       <CardMedia
         component="img"
         height="100"
-        src={objet.strDrinkThumb}
-        alt={objet.strDrink}
+        src={cocktail.strDrinkThumb}
+        alt={cocktail.strDrink}
       />
       <CardContent>
         <Button
@@ -64,7 +64,7 @@ export default function CocktailCard(props) {
             variant="h5"
             sx={{ color: "primary.lighter" }}
           >
-            {objet.strDrink}
+            {cocktail.strDrink}
           </Typography>
         </Button>
         <Typography
@@ -72,7 +72,7 @@ export default function CocktailCard(props) {
           variant="h5"
           sx={{ color: "primary.lighter" }}
         >
-          {objet.strCategory}
+          {cocktail.strCategory}
         </Typography>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
@@ -81,18 +81,18 @@ export default function CocktailCard(props) {
               style={{ overflowY: "scroll" }}
             >
               <CardHeader
-                title={objet.strDrink}
+                title={cocktail.strDrink}
                 align="center"
                 sx={{ typography: "h2" }}
               />
               <CardMedia
                 component="img"
                 height="50%"
-                src={objet.strDrinkThumb}
-                alt={objet.strDrink}
+                src={cocktail.strDrinkThumb}
+                alt={cocktail.strDrink}
               />
               <CardContent style={{ padding: "1rem" }}>
-                <IngredientTable objet={objet} />
+                <IngredientTable objet={cocktail} />
               </CardContent>
             </Card>
           </Box>
@@ -101,3 +101,6 @@ export default function CocktailCard(props) {
     </Card>
   );
 }
+CocktailCard.propTypes = {
+  cocktail: PropTypes.isRequired,
+};

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Card, Typography } from "@mui/material/";
 import { Link, useLocation } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
-import allListbyLetter from "./Divers/getMealsApi";
+import getAllList from "./Divers/getMealsApi";
 import drinks from "./Divers/ApiSim2";
 import MealList from "./MealListCreator";
 import CocktailList from "./CocktailListCreator";
@@ -12,16 +12,6 @@ import SpotifyApp from "./SpotifyApp";
 import data from "../../data/data.json";
 import Footer from "../Footer";
 import ToTopScroll from "../ToTopScroll";
-
-function getAllList() {
-  const [list, setList] = useState();
-  useEffect(() => {
-    allListbyLetter().then((response) => {
-      setList(response);
-    });
-  }, []);
-  return list;
-}
 
 export default function Details() {
   const country = JSON.parse(localStorage.getItem("country"));

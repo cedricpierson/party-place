@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 import { Box, Button, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import logo from "./Details/partyplace.png";
+import logo from "./Logoheaderlight.png";
 import formCountries from "../data/formCountries.json";
 
 export default function Home() {
@@ -20,106 +20,122 @@ export default function Home() {
   };
 
   return (
-    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
+    <div
+      className="Details Page"
+      style={{
+        background: "linear-gradient(to right, #FFF5EC 80%, #D9C46B 20%)",
+      }}
+    >
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#D9C468",
         }}
       >
         <Link to="/">
-          <img src={logo} alt="Party Place Logo" height="100%" />
+          <img src={logo} alt="Party Place Logo" width="80%" />
         </Link>
       </div>
-      <Typography
-        variant="h5"
-        position="absolute"
-        top="1rem"
-        left="1rem"
-        sx={{ color: "grey.0" }}
+      <div
         style={{
-          textAlign: "right",
-          marginRight: "1rem",
-        }}
-        id="username"
-      >
-        {userName}
-      </Typography>
-      <Typography
-        variant="h3"
-        sx={{ color: "secondary.main" }}
-        style={{
-          marginTop: "1rem",
-          marginLeft: "1rem",
-        }}
-        id="programme"
-      >
-        Où Allons Nous Ce Soir ?
-      </Typography>
-      <Autocomplete
-        inputValue={country}
-        onInputChange={(event, newInputValue) => {
-          setCountry(newInputValue);
-        }}
-        id="country-select-demo"
-        sx={{
-          width: 300,
-          margin: "1rem",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
         }}
-        options={formCountries.countries}
-        autoHighlight
-        getOptionLabel={(option) => option.label}
-        renderOption={(props, option) => (
-          <Box
-            component="li"
-            sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
-            {...props}
-          >
-            <img
-              loading="lazy"
-              width="20"
-              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-              alt=""
-            />
-            {option.label}
-          </Box>
-        )}
-        renderInput={(params) => (
-          <form
-            onSubmit={handleSubmitCountry}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "80vw",
-              maxWidth: "450",
-            }}
-          >
-            <TextField
-              {...params}
-              label="Choisir un pays"
-              inputProps={{
-                ...params.inputProps,
-                autoComplete: "new-password", // disable autocomplete and autofill
-              }}
-              onChange={(e) => setCountry(e.target.value)}
-            />
-            <Button
-              sx={{ borderRadius: "20px", m: "0.3rem" }}
-              variant="outlined"
-              type="submit"
+      >
+        <Typography
+          variant="h5"
+          position="absolute"
+          top="1rem"
+          left="1rem"
+          sx={{ color: "grey.0" }}
+          style={{
+            textAlign: "right",
+            marginRight: "1rem",
+          }}
+          id="username"
+        >
+          {userName}
+        </Typography>
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          id="programme"
+        >
+          Où Allons Nous Ce Soir ?
+        </Typography>
+        <Autocomplete
+          inputValue={country}
+          onInputChange={(event, newInputValue) => {
+            setCountry(newInputValue);
+          }}
+          id="country-select-demo"
+          sx={{
+            width: 300,
+            margin: "1rem",
+            display: "flex",
+            justifyContent: "center",
+          }}
+          options={formCountries.countries}
+          autoHighlight
+          getOptionLabel={(option) => option.label}
+          renderOption={(props, option) => (
+            <Box
+              component="li"
+              sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+              {...props}
             >
-              C'est Party!
-            </Button>
-          </form>
-        )}
-      />
+              <img
+                loading="lazy"
+                width="20"
+                src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                alt=""
+              />
+              {option.label}
+            </Box>
+          )}
+          renderInput={(params) => (
+            <form
+              onSubmit={handleSubmitCountry}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "80vw",
+                maxWidth: "450",
+              }}
+            >
+              <TextField
+                {...params}
+                label="Choisir un pays"
+                inputProps={{
+                  ...params.inputProps,
+                  autoComplete: "new-password", // disable autocomplete and autofill
+                }}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+              <Button
+                sx={{ borderRadius: "20px", m: "0.3rem", marginTop: "20px" }}
+                variant="outlined"
+                type="submit"
+              >
+                C'est Party!
+              </Button>
+            </form>
+          )}
+        />
+      </div>
     </div>
   );
 }

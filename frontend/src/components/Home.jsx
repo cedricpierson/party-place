@@ -49,7 +49,7 @@ export default function Home() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#D9C468",
+            backgroundColor: "#FFF5EC",
           }}
         >
           <Menuburger />

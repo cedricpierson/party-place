@@ -41,7 +41,9 @@ export default function Home() {
     <div
       className="Details-Page"
       id="to-top"
-      sx={{ bgcolor: "#primary.light" }}
+      style={{
+        background: "linear-gradient(to right, #FFF5EC 85%, #D9C46B 15%)",
+      }}
     >
       <Stack width={{ xs: "83vw", sm: "100vw" }}>
         <div
@@ -49,12 +51,15 @@ export default function Home() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#FFF5EC",
           }}
         >
           <Menuburger />
           <Link to="/">
-            <img src={logo} alt="Party Place Logo" />
+            <img
+              src={logo}
+              alt="Party Place Logo"
+              style={{ maxWidth: "85%" }}
+            />
           </Link>
         </div>
         <Typography
@@ -131,12 +136,12 @@ export default function Home() {
                   autoComplete: "new-password",
                 }}
                 onChange={(e) => setCountry(e.target.value)}
-                required
               />
               <Button
                 sx={{ borderRadius: "20px", m: "0.3rem" }}
                 variant="outlined"
                 type="submit"
+                style={{ color: "#FFF5EC", backgroundColor: "#C2A835" }}
               >
                 C'est Party!
               </Button>

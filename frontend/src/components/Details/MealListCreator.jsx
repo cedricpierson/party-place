@@ -44,6 +44,7 @@ export default function MealList({ mealApiItems, country }) {
           sx={{ m: 1, minWidth: 120 }}
           size="small"
           variant="outlined"
+          style={{ backgroundColor: "white" }}
         >
           <InputLabel id="filter-meals">Categories</InputLabel>
           <Select

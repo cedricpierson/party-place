@@ -25,9 +25,13 @@ export default function Details() {
   }, [pathname]);
 
   return (
-    <div className="Details-Page" id="to-top" style={{
-      background: "linear-gradient(to right, #FFF5EC 85%, #D9C46B 15%)",
-    }}>
+    <div
+      className="Details-Page"
+      id="to-top"
+      style={{
+        background: "linear-gradient(to right, #FFF5EC 85%, #D9C46B 15%)",
+      }}
+    >
       <div
         style={{
           display: "flex",

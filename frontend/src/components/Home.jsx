@@ -1,12 +1,25 @@
+/* eslint-disable prefer-const */
+/* eslint-disable no-shadow */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import logo from "./Logoheaderlight.png";
 import formCountries from "../data/formCountries.json";
+import Afrique from "./Home/Afrique";
+import AmeriqueNord from "./Home/AmeriqueNord";
+import AmeriqueLatine from "./Home/AmeriqueLatine";
+import Asie from "./Home/Asie";
+import Europe from "./Home/Europe";
+import Menuburger from "./MenuBurger";
+import Footer from "./Footer";
+import ToTopScroll from "./ToTopScroll";
+import continents from "../data/continents.json";
 
 export default function Home() {
   const [country, setCountry] = useState(" ");
@@ -14,49 +27,47 @@ export default function Home() {
   const navigate = useNavigate();
   const userName = JSON.parse(localStorage.getItem("user"));
 
-  const handleSubmitCountry = () => {
+  const handleSubmitCountry = (e) => {
+    let country = e.target.outerText;
+    localStorage.setItem("country", JSON.stringify(country));
+    navigate("/details");
+  };
+  const handleSubmitForm = () => {
     localStorage.setItem("country", JSON.stringify(country));
     navigate("/details");
   };
 
   return (
     <div
-      className="Details Page"
-      style={{
-        background: "linear-gradient(to right, #FFF5EC 80%, #D9C46B 20%)",
-      }}
+      className="Details-Page"
+      id="to-top"
+      sx={{ bgcolor: "#primary.light" }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Link to="/">
-          <img src={logo} alt="Party Place Logo" width="80%" />
-        </Link>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Typography
-          variant="h5"
-          position="absolute"
-          top="1rem"
-          left="1rem"
-          sx={{ color: "grey.0" }}
+      <Stack width={{ xs: "83vw", sm: "100vw" }}>
+        <div
           style={{
-            textAlign: "right",
-            marginRight: "1rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#FFF5EC",
+          }}
+        >
+          <Menuburger />
+          <Link to="/">
+            <img src={logo} alt="Party Place Logo" />
+          </Link>
+        </div>
+        <Typography
+          variant="h4"
+          sx={{
+            color: "secondary.main",
+          }}
+          style={{
+            margin: "1rem",
           }}
           id="username"
         >
-          {userName}
+          Salut {userName.toUpperCase()} !
         </Typography>
         <Typography
           variant="h3"
@@ -64,10 +75,7 @@ export default function Home() {
           style={{
             marginTop: "1rem",
             marginLeft: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
+            width: "80vw",
           }}
           id="programme"
         >
@@ -80,8 +88,7 @@ export default function Home() {
           }}
           id="country-select-demo"
           sx={{
-            width: 300,
-            margin: "1rem",
+            width: "83vw",
             display: "flex",
             justifyContent: "center",
           }}
@@ -106,13 +113,13 @@ export default function Home() {
           )}
           renderInput={(params) => (
             <form
-              onSubmit={handleSubmitCountry}
+              onSubmit={handleSubmitForm}
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                width: "80vw",
+                width: "70vw",
                 maxWidth: "450",
               }}
             >
@@ -121,13 +128,13 @@ export default function Home() {
                 label="Choisir un pays"
                 inputProps={{
                   ...params.inputProps,
-                  autoComplete: "new-password", // disable autocomplete and autofill
+                  autoComplete: "new-password",
                 }}
                 onChange={(e) => setCountry(e.target.value)}
-                style={{ backgroundColor: "white", borderRadius: "5px" }}
+                required
               />
               <Button
-                sx={{ borderRadius: "20px", m: "0.3rem", marginTop: "20px" }}
+                sx={{ borderRadius: "20px", m: "0.3rem" }}
                 variant="outlined"
                 type="submit"
               >
@@ -136,12 +143,149 @@ export default function Home() {
             </form>
           )}
         />
-      </div>
+
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+          id="programme"
+        >
+          Afrique
+        </Typography>
+        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+          {Object.keys(continents.Afrique).map((continent) => (
+            <span
+              key={continent}
+              onClick={handleSubmitCountry}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          ))}
+        </h6>
+        <Afrique />
+
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+          id="programme"
+        >
+          Amérique Latine
+        </Typography>
+
+        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+          {Object.keys(continents["Amérique Latine"]).map((continent) => (
+            <span
+              onClick={handleSubmitCountry}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          ))}
+        </h6>
+        <AmeriqueLatine />
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+          id="programme"
+        >
+          Amérique du Nord
+        </Typography>
+
+        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+          {Object.keys(continents["Amérique du Nord"]).map((continent) => (
+            <span
+              onClick={handleSubmitCountry}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          ))}
+        </h6>
+        <AmeriqueNord />
+
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+          id="programme"
+        >
+          Asie
+        </Typography>
+        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+          {Object.keys(continents.Asie).map((continent) => (
+            <span
+              onClick={handleSubmitCountry}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          ))}
+        </h6>
+        <Asie />
+        <Typography
+          variant="h3"
+          sx={{ color: "secondary.main" }}
+          style={{
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+          id="programme"
+        >
+          Europe
+        </Typography>
+
+        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+          {Object.keys(continents.Europe).map((continent) => (
+            <span
+              onClick={handleSubmitCountry}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                margin: "0 0.3rem",
+              }}
+            >
+              {continent}
+            </span>
+          ))}
+        </h6>
+        <Europe />
+        <ToTopScroll />
+        <Footer />
+      </Stack>
     </div>
   );
 }
-
-// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 
 Home.propTypes = {
   country: PropTypes.string.isRequired,

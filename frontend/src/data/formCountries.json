@@ -32,6 +32,7 @@
     "label": "Japon",
     "suggested": true
   },
+  { "code": "KE", "label": "Kenya", "suggested": true },
   { "code": "MY", "label": "Malaysie", "suggested": true },
   { "code": "MA", "label": "Maroc", "suggested": true },
   { "code": "MX", "label": "Mexique", "suggested": true },

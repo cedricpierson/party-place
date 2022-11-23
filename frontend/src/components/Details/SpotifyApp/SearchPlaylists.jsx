@@ -84,7 +84,7 @@ export default function SearchPlaylists({ playlistId, setPlaylistId }) {
               id="standard-basic"
               label="Rechercher"
               onChange={(e) => setSearchKey(e.target.value)}
-              sx={{ width: "70vw" }}
+              sx={{ width: "70vw", maxWidth: "400px" }}
             />
             <Button type="submit">
               <SearchIcon sx={{ fontSize: 45 }} />

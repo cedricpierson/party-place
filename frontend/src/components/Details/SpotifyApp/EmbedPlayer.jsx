@@ -9,6 +9,7 @@ export default function EmbedPlayer({ playlistId, setPlaylistId, country }) {
       setPlaylistId(data[country].defaultPlaylistId);
     }
   }, []);
+
   return (
     <div>
       <Iframe

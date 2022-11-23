@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Typography } from "@mui/material/";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PlaceIcon from "@mui/icons-material/Place";
 import getAllList from "./Divers/getMealsApi";
 import getAllCocktail from "./Divers/GetCocktailApi";
@@ -10,15 +10,22 @@ import MobileButtonNav from "./MobileButtonNav";
 import logo from "./partyplace.png";
 import SpotifyApp from "./SpotifyApp";
 import data from "../../data/data.json";
+import Footer from "../Footer";
+import ToTopScroll from "../ToTopScroll";
 
 export default function Details() {
   const country = JSON.parse(localStorage.getItem("country"));
   const mealsApi = getAllList();
   const CocktailApi = getAllCocktail();
   const userName = JSON.parse(localStorage.getItem("user"));
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
-    <div className="Details Page" sx={{ bgcolor: "#primary.light" }}>
+    <div className="Details-Page" id="to-top" sx={{ bgcolor: "primary.light" }}>
       <div
         style={{
           display: "flex",
@@ -32,18 +39,14 @@ export default function Details() {
         </Link>
       </div>
       <Typography
-        variant="h5"
-        position="absolute"
-        top="1rem"
-        left="1rem"
-        sx={{ color: "grey.0" }}
+        variant="h4"
+        sx={{ color: "secondary.main" }}
         style={{
-          textAlign: "right",
-          marginRight: "1rem",
+          margin: "1rem",
         }}
         id="username"
       >
-        {userName}
+        Salut {userName.toUpperCase()} !
       </Typography>
       <Typography
         variant="h2"
@@ -95,6 +98,8 @@ export default function Details() {
       />
       <SpotifyApp sx={{ margin: "1rem" }} country={country} />
       <MobileButtonNav element1={MealList} />
+      <ToTopScroll />
+      <Footer />
     </div>
   );
 }

@@ -51,6 +51,7 @@ export default function MealList({ mealApiItems, country }) {
               : { m: 1, minWidth: 240, fontSize: "1rem" }
           }
           size={matches ? "small" : "large"}
+          style={{ backgroundColor: "white" }}
           variant="outlined"
         >
           <InputLabel id="filter-meals">Categories</InputLabel>

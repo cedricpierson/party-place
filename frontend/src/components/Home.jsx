@@ -45,7 +45,7 @@ export default function Home() {
         background: "linear-gradient(to right, #FFF5EC 85%, #D9C46B 15%)",
       }}
     >
-      <Stack width={{ xs: "83vw", sm: "100vw" }}>
+      <Stack width={{ xs: "83vw", sm: "100vw" }} paddingBottom="1rem">
         <div
           style={{
             display: "flex",
@@ -75,7 +75,7 @@ export default function Home() {
           Salut {userName.toUpperCase()} !
         </Typography>
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{ color: "secondary.main" }}
           style={{
             marginTop: "1rem",
@@ -160,21 +160,30 @@ export default function Home() {
         >
           Afrique
         </Typography>
-        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginBottom: "1rem",
+          }}
+        >
           {Object.keys(continents.Afrique).map((continent) => (
-            <span
-              key={continent}
-              onClick={handleSubmitCountry}
-              style={{
-                textDecoration: "none",
-                color: "#000",
-                margin: "0 0.3rem",
-              }}
-            >
-              {continent}
-            </span>
+            <h6 style={{ margin: "0 0 0 1rem" }}>
+              <span
+                key={continent}
+                onClick={handleSubmitCountry}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  margin: "0 0.3rem",
+                }}
+              >
+                {continent}
+              </span>
+            </h6>
           ))}
-        </h6>
+        </Stack>
         <Afrique />
 
         <Typography
@@ -188,21 +197,29 @@ export default function Home() {
         >
           Amérique Latine
         </Typography>
-
-        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginBottom: "1rem",
+          }}
+        >
           {Object.keys(continents["Amérique Latine"]).map((continent) => (
-            <span
-              onClick={handleSubmitCountry}
-              style={{
-                textDecoration: "none",
-                color: "#000",
-                margin: "0 0.3rem",
-              }}
-            >
-              {continent}
-            </span>
+            <h6 style={{ margin: "0 0 0 1rem" }}>
+              <span
+                onClick={handleSubmitCountry}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  margin: "0 0.3rem",
+                }}
+              >
+                {continent}
+              </span>
+            </h6>
           ))}
-        </h6>
+        </Stack>
         <AmeriqueLatine />
         <Typography
           variant="h3"
@@ -215,21 +232,29 @@ export default function Home() {
         >
           Amérique du Nord
         </Typography>
-
-        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginBottom: "1rem",
+          }}
+        >
           {Object.keys(continents["Amérique du Nord"]).map((continent) => (
-            <span
-              onClick={handleSubmitCountry}
-              style={{
-                textDecoration: "none",
-                color: "#000",
-                margin: "0 0.3rem",
-              }}
-            >
-              {continent}
-            </span>
+            <h6 style={{ margin: "0 0 0 1rem" }}>
+              <span
+                onClick={handleSubmitCountry}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  margin: "0 0.3rem",
+                }}
+              >
+                {continent}
+              </span>
+            </h6>
           ))}
-        </h6>
+        </Stack>
         <AmeriqueNord />
 
         <Typography
@@ -243,20 +268,29 @@ export default function Home() {
         >
           Asie
         </Typography>
-        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginBottom: "1rem",
+          }}
+        >
           {Object.keys(continents.Asie).map((continent) => (
-            <span
-              onClick={handleSubmitCountry}
-              style={{
-                textDecoration: "none",
-                color: "#000",
-                margin: "0 0.3rem",
-              }}
-            >
-              {continent}
-            </span>
+            <h6 style={{ margin: "0 0 0 1rem" }}>
+              <span
+                onClick={handleSubmitCountry}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  margin: "0 0.3rem",
+                }}
+              >
+                {continent}
+              </span>
+            </h6>
           ))}
-        </h6>
+        </Stack>
         <Asie />
         <Typography
           variant="h3"
@@ -269,21 +303,29 @@ export default function Home() {
         >
           Europe
         </Typography>
-
-        <h6 style={{ margin: "0 0 1rem 1rem" }}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginBottom: "1rem",
+          }}
+        >
           {Object.keys(continents.Europe).map((continent) => (
-            <span
-              onClick={handleSubmitCountry}
-              style={{
-                textDecoration: "none",
-                color: "#000",
-                margin: "0 0.3rem",
-              }}
-            >
-              {continent}
-            </span>
+            <h6 style={{ margin: "0 0 0 1rem" }}>
+              <span
+                onClick={handleSubmitCountry}
+                style={{
+                  textDecoration: "none",
+                  color: "#000",
+                  margin: "0 0.3rem",
+                }}
+              >
+                {continent}
+              </span>
+            </h6>
           ))}
-        </h6>
+        </Stack>
         <Europe />
         <ToTopScroll />
         <Footer />

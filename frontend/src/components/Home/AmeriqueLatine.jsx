@@ -26,7 +26,7 @@ export default function AmeriqueLatine() {
     <Stack
       style={{
         overflowX: "auto",
-        margin: "1rem",
+        marginLeft: "1rem",
       }}
       direction="row"
       spacing={1}
@@ -34,9 +34,10 @@ export default function AmeriqueLatine() {
       {Object.keys(continents["Amérique Latine"]).map((coun) => (
         <Card
           sx={{
-            minWidth: "200px",
-            width: "200px",
-            height: "200px",
+            minWidth: { xs: "200px", sm: "200px" },
+            width: { xs: "200px", sm: "20vw" },
+            minHeight: { xs: "200px", sm: "200px" },
+            height: { xs: "200px", sm: "20vw" },
             backgroundColor: "primary.main",
           }}
         >
@@ -44,11 +45,12 @@ export default function AmeriqueLatine() {
             <CardMedia
               component="img"
               height="140"
+              sx={{ minHeight: { sm: "14vw" } }}
               image={continents["Amérique Latine"][coun]}
               alt={coun}
               onClick={handleClickCountry}
             />
-            <CardContent>
+            <CardContent style={{ padding: "1vw" }}>
               <Typography gutterBottom variant="h5" component="div">
                 {coun}
               </Typography>

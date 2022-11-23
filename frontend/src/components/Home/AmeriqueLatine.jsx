@@ -26,7 +26,7 @@ export default function AmeriqueLatine() {
     <Stack
       style={{
         overflowX: "auto",
-        margin: "1rem",
+        marginLeft: "1rem",
       }}
       direction="row"
       spacing={1}

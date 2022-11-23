@@ -35,6 +35,7 @@ export default function Afrique() {
         <Card
           sx={{
             minWidth: "200px",
+            width: "200px",
             height: "200px",
             backgroundColor: "primary.main",
           }}

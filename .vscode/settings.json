@@ -1,0 +1,5 @@
+{
+    "prettier.endOfLine": "auto",
+    "editor.formatOnSave": true,
+    "files.eol": "\n"
+}

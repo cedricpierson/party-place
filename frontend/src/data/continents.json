@@ -1,0 +1,38 @@
+{
+ "Afrique": {
+     "Egypte": "src/assets/Pays/Afrique/Egypte.jpg",
+     "Kenya": "src/assets/Pays/Afrique/Kenya.jpg",
+     "Maroc": "src/assets/Pays/Afrique/Maroc.jpg",	
+     "Tunisie": "src/assets/Pays/Afrique/Tunisie.jpg"
+ },
+"Amérique du Nord": {
+    "Canada": "src/assets/Pays/AmeriqueNord/Canada.jpg",
+"États-Unis": "src/assets/Pays/AmeriqueNord/Etats-Unis.jpg"
+},
+"Amérique Latine": {
+    "Jamaïque": "src/assets/Pays/AmeriqueLatine/Jamaique.jpg",
+    "Méxique": "src/assets/Pays/AmeriqueLatine/Mexique.png"
+},
+"Asie": {
+    "Chine": "src/assets/Pays/Asie/Chine.jpg",
+    "Inde": "src/assets/Pays/Asie/Inde.jpg",
+    "Japon": "src/assets/Pays/Asie/Japon.jpeg",
+    "Malaisie": "src/assets/Pays/Asie/Malaisie.jpg",
+    "Russie": "src/assets/Pays/Asie/Russie.jpg",
+    "Thaïlande": "src/assets/Pays/Asie/Thailande.jpg",
+    "Turquie": "src/assets/Pays/Asie/Turquie.jpg",
+    "Vietnam": "src/assets/Pays/Asie/Vietnam.jpg"
+},
+"Europe": {
+    "Croatie": "src/assets/Pays/Europe/Croatie.jpg",
+    "Espagne": "src/assets/Pays/Europe/Espagne.jpg",
+    "France": "src/assets/Pays/Europe/France.jpg",
+    "Grande-Bretagne": "src/assets/Pays/Europe/Grande-Bretagne.jpg",
+    "Grèce": "src/assets/Pays/Europe/Grèce.jpg",
+    "Pays-Bas"	: "src/assets/Pays/Europe/Hollande.jpg",
+    "Irlande": "src/assets/Pays/Europe/Irlande.jpg",
+    "Italie": "src/assets/Pays/Europe/Italie.jpg",
+    "Pologne": "src/assets/Pays/Europe/Pologne.jpg",
+    "Portugal": "src/assets/Pays/Europe/Portugal.jpg"
+}
+}

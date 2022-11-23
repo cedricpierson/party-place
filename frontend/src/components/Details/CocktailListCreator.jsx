@@ -1,5 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Stack from "@mui/material/Stack";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
@@ -7,6 +9,8 @@ import LocalBarIcon from "@mui/icons-material/LocalBar";
 import CocktailCard from "./caroussel/CocktailCard";
 
 function CocktailList({ cocktailApiItems, Alcool1, Alcool2 }) {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div
       id="cocktail"
@@ -18,7 +22,7 @@ function CocktailList({ cocktailApiItems, Alcool1, Alcool2 }) {
       }}
     >
       <Typography
-        variant="h3"
+        variant={matches ? "h4" : "h3"}
         style={{ display: "flex", alignItems: "center" }}
         sx={{ color: "secondary.main" }}
       >

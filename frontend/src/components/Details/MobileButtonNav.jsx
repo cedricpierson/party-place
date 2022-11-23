@@ -13,7 +13,7 @@ export default function MobileButtonNav() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Box sx={{ pb: 7 }}>
+    <Box sx={{ pb: 7 }} style={{ maxWidth: "100vw" }}>
       <Paper
         sx={{
           position: "fixed",
@@ -22,6 +22,7 @@ export default function MobileButtonNav() {
           right: 0,
         }}
         elevation={3}
+        style={{ maxWidth: "100vw" }}
       >
         {matches && (
           <BottomNavigation

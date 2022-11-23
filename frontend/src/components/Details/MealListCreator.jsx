@@ -1,6 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import Stack from "@mui/material/Stack";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import LocalDiningIcon from "@mui/icons-material/LocalDining";
 import Skeleton from "@mui/material/Skeleton";
@@ -12,6 +14,8 @@ import MealCard from "./caroussel/MealsCard";
 import getCategory from "./Divers/FilterMeals";
 
 export default function MealList({ mealApiItems, country }) {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   const listCategory = getCategory();
   const [filter, setFilter] = React.useState("");
   const handleChange = (e) => {
@@ -29,7 +33,7 @@ export default function MealList({ mealApiItems, country }) {
     >
       <div className="enTete" style={{ display: "flex" }}>
         <Typography
-          variant="h4"
+          variant={matches ? "h4" : "h3"}
           style={{
             display: "flex",
             alignItems: "center",
@@ -41,8 +45,12 @@ export default function MealList({ mealApiItems, country }) {
           Recette à déguster
         </Typography>
         <FormControl
-          sx={{ m: 1, minWidth: 120 }}
-          size="small"
+          sx={
+            matches
+              ? { m: 1, minWidth: 120 }
+              : { m: 1, minWidth: 240, fontSize: "1rem" }
+          }
+          size={matches ? "small" : "large"}
           variant="outlined"
         >
           <InputLabel id="filter-meals">Categories</InputLabel>

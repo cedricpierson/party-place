@@ -8,6 +8,8 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Card from "@mui/material/Card";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import IngredientTable from "./ReceipeTable";
 
 const style = {
@@ -28,30 +30,51 @@ export default function MealCard({ recette }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const styleMd = {
+    width: "20vw",
+    height: "30vw",
+    display: "flex",
+    bgcolor: "primary.main",
+    borderRadius: "20px",
+  };
+  const styleSm = {
+    width: "50vw",
+    height: "50vw",
+    display: "flex",
+    bgcolor: "primary.main",
+    borderRadius: "15px",
+  };
+  const fontMd = {
+    color: "primary.lighter",
+    fontSize: "1.8rem",
+    paddingTop: "0.5rem",
+  };
+  const fontSm = { color: "primary.lighter", fontSize: "1rem" };
+
   return (
     <Card
       className="MealCard"
-      sx={{
-        width: "50vw",
-        height: "50vw",
-        display: "flex",
-        bgcolor: "primary.main",
-      }}
+      sx={matches ? styleSm : styleMd}
       style={{
-        minWidth: "40vw",
-        maxWidth: "40vw",
+        minWidth: "20vw",
+        maxWidth: "50vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        boxShadow: "5px 7px 7px 0px rgba(116,103,12,0.7)",
       }}
     >
       <CardMedia
         component="img"
-        height="100"
+        height="50%"
         src={recette.strMealThumb}
         alt={recette.strMeal}
       />
-      <CardContent style={{ padding: 0 }}>
+      <CardContent
+        style={{ display: "flex", flexDirection: "column", padding: 0 }}
+      >
         <Button
           onClick={handleOpen}
           style={{
@@ -61,7 +84,7 @@ export default function MealCard({ recette }) {
           <Typography
             align="center"
             variant="body2"
-            sx={{ color: "primary.lighter" }}
+            sx={matches ? fontSm : fontMd}
           >
             {recette.strMeal}
           </Typography>
@@ -69,7 +92,7 @@ export default function MealCard({ recette }) {
         <Typography
           align="center"
           variant="body2"
-          sx={{ color: "primary.darker" }}
+          sx={matches ? fontSm : fontMd}
         >
           {recette.strCategory}
         </Typography>

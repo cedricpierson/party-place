@@ -87,7 +87,7 @@ function Welcomepage() {
                 id="user"
                 label="Votre nom"
                 type="text"
-                style={{ backgroundColor: "#ffffcd" }}
+                style={{ backgroundColor: "white" }}
                 onChange={(e) => setUser(e.target.value)}
                 // sx={{ width: "70vw" }}
                 required

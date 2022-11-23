@@ -36,6 +36,7 @@ function CocktailList({ cocktailApiItems, Alcool1, Alcool2 }) {
           maxHeight: "65vh",
           overflowX: "scroll",
           alignItems: "center",
+          width: "82vw",
         }}
         direction="row"
         spacing={1}

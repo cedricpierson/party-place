@@ -34,13 +34,15 @@ export default function MealCard({ recette }) {
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const styleMd = {
     width: "20vw",
+    minWidth: "20vw",
     height: "30vw",
     display: "flex",
     bgcolor: "primary.main",
     borderRadius: "20px",
   };
   const styleSm = {
-    width: "50vw",
+    width: "40vw",
+    minWidth: "40vw",
     height: "50vw",
     display: "flex",
     bgcolor: "primary.main",
@@ -58,7 +60,6 @@ export default function MealCard({ recette }) {
       className="MealCard"
       sx={matches ? styleSm : styleMd}
       style={{
-        minWidth: "20vw",
         maxWidth: "50vw",
         display: "flex",
         flexDirection: "column",
